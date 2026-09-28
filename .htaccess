@@ -26,3 +26,9 @@ Header always set Referrer-Policy "strict-origin-when-cross-origin"
 Header always set Permissions-Policy "geolocation=(self), camera=(), microphone=()"
 Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.open-meteo.com https://customer-api.open-meteo.com https://api.weather.gov; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
 </IfModule>
+# The public data files are meant to be read by other tools, so allow cross-origin reads.
+<IfModule mod_headers.c>
+<FilesMatch "^(summary\.json|coefficients\.json|llms\.txt)$">
+Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+</IfModule>

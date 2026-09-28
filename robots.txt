@@ -1,5 +1,115 @@
+# Snow Day Forecaster — everything except the ZIP lookup shards is open.
 User-agent: *
 Allow: /
+Allow: /api/
+Disallow: /zip/
+
+# Named AI and answer-engine crawlers, allowed explicitly so there is no ambiguity.
+User-agent: GPTBot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Claude-User
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Claude-SearchBot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: anthropic-ai
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Perplexity-User
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Google-Extended
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Applebot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Applebot-Extended
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Bingbot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: CCBot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Amazonbot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: DuckAssistBot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: cohere-ai
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: YouBot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Timpibot
+Allow: /
+Allow: /api/
+Disallow: /zip/
+
+User-agent: Diffbot
+Allow: /
+Allow: /api/
 Disallow: /zip/
 
 Sitemap: https://www.snowdayforecaster.com/sitemap.xml
+# Plain-text site summary for language models: https://www.snowdayforecaster.com/llms.txt
+# Machine-readable figures: https://www.snowdayforecaster.com/api/summary.json

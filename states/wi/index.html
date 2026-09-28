@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snow Day Chances in Wisconsin: How Much Snow Closes School</title>
+<meta name="description" content="How much snow it takes to close school in Wisconsin (6.2 inches for a 50% chance), the cold threshold, and the district closure record behind the numbers.">
+<link rel="canonical" href="https://www.snowdayforecaster.com/states/wi/">
+<meta name="theme-color" content="#1d5bb8">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Snow Day Forecaster">
+<meta property="og:title" content="Snow Day Chances in Wisconsin: How Much Snow Closes School"><meta property="og:description" content="How much snow it takes to close school in Wisconsin (6.2 inches for a 50% chance), the cold threshold, and the district closure record behind the numbers.">
+<meta property="og:url" content="https://www.snowdayforecaster.com/states/wi/"><meta property="og:image" content="https://www.snowdayforecaster.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/json" href="/api/summary.json" title="Machine-readable summary">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<style>:root{--ink:#0f2233;--muted:#4a5d70;--bg:#f4f7fa;--card:#fff;--line:#d9e3ec;--accent:#1d5bb8;--accent-ink:#fff;
+--b0:#7d93a8;--b1:#3f86d8;--b2:#d9a21b;--b3:#e0762b;--b4:#cf3a26;--b5:#8f1d44;--warn:#fff4d6;--warn-ink:#5c4400;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#e6eef6;--muted:#a3b4c5;--bg:#0c1722;--card:#132232;--line:#243a50;
+--accent:#7fb2ff;--accent-ink:#08131d;--warn:#3a2f10;--warn-ink:#f6dd9a;color-scheme:dark}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--accent)}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:1px solid var(--line);background:var(--card)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand svg{width:22px;height:22px}
+nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-size:15px;display:inline-block;padding:10px 0}nav a:hover{color:var(--ink)}
+main{padding:28px 0 48px}
+h1{font-size:clamp(30px,6vw,42px);line-height:1.1;letter-spacing:-.02em;margin:0 0 10px}
+h2{font-size:23px;letter-spacing:-.01em;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 6px}
+.lede{color:var(--muted);font-size:18px;margin:0 0 22px;max-width:36em}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+label{display:block;font-weight:600;margin:0 0 6px}
+.row{display:flex;gap:8px}
+input#zip{flex:1;min-width:0;font:inherit;font-size:22px;letter-spacing:.08em;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);min-height:52px}
+button{font:inherit;cursor:pointer}
+.go{background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;padding:0 20px;font-weight:700;min-height:52px}
+.link{background:none;border:0;color:var(--accent);padding:10px 0 0;text-decoration:underline;font-size:15px;min-height:44px}
+.status{min-height:1.4em;margin:10px 0 0;color:var(--muted);font-size:15px}.status.err{color:var(--b4)}
+#result{margin-top:14px}
+.place{font-weight:700;margin:0 0 8px}
+.alert{background:var(--warn);color:var(--warn-ink);border-radius:8px;padding:8px 12px;font-size:15px;margin:0 0 10px}
+.days{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.day{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--bg);--c:var(--b0)}
+.day.b1{--c:var(--b1)}.day.b2{--c:var(--b2)}.day.b3{--c:var(--b3)}.day.b4{--c:var(--b4)}.day.b5{--c:var(--b5)}
+.day.lead{grid-column:1/-1}
+.when{margin:0;font-size:14px;color:var(--muted)}
+.pct{margin:2px 0 0;font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.lead .pct{font-size:56px;line-height:1.05}.pct.wk{font-size:22px;color:var(--muted)}
+.verdict{margin:0 0 8px;font-weight:600;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.verdict:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
+.delay{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:99px;padding:1px 8px;color:var(--muted)}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}.bar i{display:block;height:100%;background:var(--c);border-radius:99px}
+.why{margin:8px 0 0;font-size:14px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted);margin:12px 0 0}
+.share button{margin-top:12px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 14px;min-height:44px}
+table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.fact{font-size:20px;line-height:1.4;border-left:4px solid var(--accent);padding:4px 0 4px 14px;margin:16px 0}
+details{border-bottom:1px solid var(--line);padding:12px 0}summary{font-weight:600;cursor:pointer;min-height:24px}details p{margin:8px 0 0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.grid3>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.grid3 b{display:block;font-size:26px;font-variant-numeric:tabular-nums}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color:var(--muted)}footer a{color:var(--muted)}footer p{margin:6px 0}
+.crumb{font-size:14px;color:var(--muted);margin:0 0 10px}.crumb a{color:var(--muted)}
+.pill{font-size:12px;font-weight:700;border-radius:99px;padding:2px 8px;white-space:nowrap}
+.pill.closed{background:#fde2de;color:#8a1f12}.pill.remote{background:#dfeafc;color:#123f7d}.pill.delay{background:#fdf0cf;color:#5c4400}
+.answer{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:14px 16px;margin:0 0 22px;font-size:17px}
+.answer p{margin:0}.answer p+p{margin-top:8px}
+.related{margin:44px 0 0;border-top:1px solid var(--line);padding-top:18px}
+.related h2{margin:0 0 10px;font-size:18px}
+.related ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+.related li{margin:0}.related a{text-decoration:none}.related a:hover{text-decoration:underline}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:16px 0}
+.cards a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.cards a:hover{border-color:var(--accent)}.cards b{display:block}.cards span{font-size:14px;color:var(--muted)}
+dl.gloss dt{font-weight:700;margin:18px 0 4px}dl.gloss dd{margin:0;color:var(--muted)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px;margin:14px 0}
+.kv dt{color:var(--muted)}.kv dd{margin:0;font-weight:600}
+@media (max-width:560px){.grid3{grid-template-columns:1fr}nav a{margin-left:10px}.lead .pct{font-size:48px}.related ul{grid-template-columns:1fr}}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Snow Day Forecaster","url":"https://www.snowdayforecaster.com","logo":"https://www.snowdayforecaster.com/icon-512.png"},{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.snowdayforecaster.com/states/wi/#page","url":"https://www.snowdayforecaster.com/states/wi/","name":"Snow Day Chances in Wisconsin: How Much Snow Closes School","description":"How much snow it takes to close school in Wisconsin (6.2 inches for a 50% chance), the cold threshold, and the district closure record behind the numbers.","inLanguage":"en-US","dateModified":"2026-09-29","isPartOf":{"@type":"WebSite","name":"Snow Day Forecaster","url":"https://www.snowdayforecaster.com"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#answer","h1"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.snowdayforecaster.com/"},{"@type":"ListItem","position":2,"name":"By state","item":"https://www.snowdayforecaster.com/states/"},{"@type":"ListItem","position":3,"name":"Wisconsin","item":"https://www.snowdayforecaster.com/states/wi/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much snow does it take to close school in Wisconsin?","acceptedAnswer":{"@type":"Answer","text":"About 6.2 inches of new snow gives a roughly 50% chance of a school closing in Wisconsin, and about 11.1 inches gives 80%, for a plain overnight snowfall with no ice and no snow already on the ground. Ice lowers those figures sharply."}},{"@type":"Question","name":"How cold does it have to be for schools to close in Wisconsin?","acceptedAnswer":{"@type":"Answer","text":"Cold alone starts closing Wisconsin schools at around -35\u00b0F wind chill. Districts use wind chill rather than air temperature because the risk is frostbite at the bus stop, and individual district policies vary widely around this regional average."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M4.9 6.5l14.2 11M19.1 6.5 4.9 17.5M9 3.5l3 2 3-2M9 20.5l3-2 3 2"/></svg>Snow Day Forecaster</a>
+<nav aria-label="Main"><a href="/">Calculator</a><a href="/states/">By state</a><a href="/2025-26-closures/">2025-26 closures</a><a href="/methodology/">Accuracy</a></nav></div></header>
+<main class="wrap"><p class="crumb"><a href="/">Home</a> / <a href="/states/">By state</a> / Wisconsin</p>
+<h1>Snow day chances in Wisconsin</h1>
+<p class="lede">How much snow it takes to close school in Wisconsin, and why the number is not the same as the state next door.</p>
+<div class="answer" id="answer"><p>In Wisconsin it takes roughly <b>6.2 inches</b> of new snow for the chance of a school closing to reach 50%, and about <b>11.1 inches</b> for 80%, for a plain overnight snowfall with no ice and no snow already on the ground.</p><p>Cold alone, with no snow at all, starts closing Wisconsin schools around <b>-35°F</b> wind chill. Wisconsin sits in the Northern snow belt region of this model. For tomorrow's actual number, <a href="/">enter your ZIP code</a>.</p></div>
+<dl class="kv">
+<dt>Region</dt><dd>Northern snow belt</dd>
+<dt>Snow for a 50% chance</dt><dd>6.2 inches</dd>
+<dt>Snow for an 80% chance</dt><dd>11.1 inches</dd>
+<dt>Cold-only closing</dt><dd>about -35°F wind chill</dd>
+<dt>Basis</dt><dd>This district is part of the 20 we tracked, so Wisconsin's numbers rest on its own evidence as well as the region's.</dd>
+</dl>
+
+<h2>What closes schools in the Northern snow belt</h2>
+<p>Districts here run big plough fleets and expect snow all winter, so it takes a lot to close them. When they do close it is usually for blizzard-force wind, ice, or wind chill deep below zero rather than snow depth alone.</p>
+<p>Two things matter more than the headline snow total almost everywhere, Wisconsin included. The first is ice: freezing rain and sleet barely register as snow depth but close schools at once. The second is what is already on the ground — 64% of the closures in our dataset followed less than an inch of new snow in the previous 48 hours, because the storm had passed and the roads had not.</p>
+
+<h2>What happened in Wisconsin in 2025-26</h2><div class="tw"><table><thead><tr><th>District</th><th>City</th><th>Closed</th><th>Remote</th><th>Delayed</th></tr></thead><tbody><tr><td><a href="/2025-26-closures/#milwaukee">Milwaukee Public Schools</a></td><td>Milwaukee, WI</td><td>2</td><td>0</td><td>0</td></tr></tbody></table></div><p>Every date, the weather on it and a source are on the <a href="/2025-26-closures/">closure data page</a>.</p>
+
+<h2>Checking your own district</h2>
+<p>This page is regional. Your district's own policy — how many emergency days it has left, whether it prefers a <a href="/two-hour-delay/">delay</a> or a <a href="/glossary/">remote day</a>, how many students walk — can move the real threshold either way. The <a href="/">calculator</a> reads the current forecast for your exact ZIP code, which is closer, but it still does not know your superintendent. Follow your district's own channels for the announcement.</p>
+<nav class="related" aria-labelledby="rel-h"><h2 id="rel-h">Related pages</h2><ul><li><a href="/">Snow day calculator</a></li><li><a href="/states/">Snow day chances by state</a></li><li><a href="/school-closing-predictions/">School closing predictions</a></li><li><a href="/cold-day-school-closings/">Cold days and wind chill</a></li><li><a href="/2025-26-closures/">2025-26 closure data</a></li></ul></nav></main>
+<footer><div class="wrap">
+<p><a href="/snow-day-tomorrow/">Snow day tomorrow</a> · <a href="/school-closing-predictions/">School closing predictions</a> · <a href="/two-hour-delay/">Two-hour delays</a> · <a href="/cold-day-school-closings/">Cold days</a> · <a href="/lake-effect-snow/">Lake-effect snow</a> · <a href="/glossary/">Glossary</a></p>
+<p><a href="/about/">About</a> · <a href="/methodology/">Methodology</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/llms.txt">llms.txt</a></p>
+<p>Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a> (CC BY 4.0) and the <a href="https://www.weather.gov/" rel="noopener">National Weather Service</a>. Probabilities are estimates; your school district makes the call.</p>
+<p>© 2026 Snow Day Forecaster</p></div></footer>
+</body>
+</html>

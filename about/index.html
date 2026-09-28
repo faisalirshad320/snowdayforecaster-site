@@ -12,6 +12,8 @@
 <meta property="og:url" content="https://www.snowdayforecaster.com/about/"><meta property="og:image" content="https://www.snowdayforecaster.com/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/json" href="/api/summary.json" title="Machine-readable summary">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
 <style>:root{--ink:#0f2233;--muted:#4a5d70;--bg:#f4f7fa;--card:#fff;--line:#d9e3ec;--accent:#1d5bb8;--accent-ink:#fff;
 --b0:#7d93a8;--b1:#3f86d8;--b2:#d9a21b;--b3:#e0762b;--b4:#cf3a26;--b5:#8f1d44;--warn:#fff4d6;--warn-ink:#5c4400;color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#e6eef6;--muted:#a3b4c5;--bg:#0c1722;--card:#132232;--line:#243a50;
@@ -65,12 +67,24 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color
 .crumb{font-size:14px;color:var(--muted);margin:0 0 10px}.crumb a{color:var(--muted)}
 .pill{font-size:12px;font-weight:700;border-radius:99px;padding:2px 8px;white-space:nowrap}
 .pill.closed{background:#fde2de;color:#8a1f12}.pill.remote{background:#dfeafc;color:#123f7d}.pill.delay{background:#fdf0cf;color:#5c4400}
-@media (max-width:560px){.grid3{grid-template-columns:1fr}nav a{margin-left:10px}.lead .pct{font-size:48px}}</style>
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Snow Day Forecaster","url":"https://www.snowdayforecaster.com","logo":"https://www.snowdayforecaster.com/icon-512.png"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.snowdayforecaster.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://www.snowdayforecaster.com/about/"}]}]</script>
+.answer{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:14px 16px;margin:0 0 22px;font-size:17px}
+.answer p{margin:0}.answer p+p{margin-top:8px}
+.related{margin:44px 0 0;border-top:1px solid var(--line);padding-top:18px}
+.related h2{margin:0 0 10px;font-size:18px}
+.related ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+.related li{margin:0}.related a{text-decoration:none}.related a:hover{text-decoration:underline}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:16px 0}
+.cards a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.cards a:hover{border-color:var(--accent)}.cards b{display:block}.cards span{font-size:14px;color:var(--muted)}
+dl.gloss dt{font-weight:700;margin:18px 0 4px}dl.gloss dd{margin:0;color:var(--muted)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px;margin:14px 0}
+.kv dt{color:var(--muted)}.kv dd{margin:0;font-weight:600}
+@media (max-width:560px){.grid3{grid-template-columns:1fr}nav a{margin-left:10px}.lead .pct{font-size:48px}.related ul{grid-template-columns:1fr}}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Snow Day Forecaster","url":"https://www.snowdayforecaster.com","logo":"https://www.snowdayforecaster.com/icon-512.png"},{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.snowdayforecaster.com/about/#page","url":"https://www.snowdayforecaster.com/about/","name":"About Snow Day Forecaster","description":"Who makes Snow Day Forecaster, how to reach us and how we correct mistakes.","inLanguage":"en-US","dateModified":"2026-09-29","isPartOf":{"@type":"WebSite","name":"Snow Day Forecaster","url":"https://www.snowdayforecaster.com"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#answer","h1"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.snowdayforecaster.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://www.snowdayforecaster.com/about/"}]}]</script>
 </head>
 <body>
 <header class="top"><div class="wrap"><a class="brand" href="/"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M4.9 6.5l14.2 11M19.1 6.5 4.9 17.5M9 3.5l3 2 3-2M9 20.5l3-2 3 2"/></svg>Snow Day Forecaster</a>
-<nav aria-label="Main"><a href="/">Calculator</a><a href="/2025-26-closures/">2025-26 closures</a><a href="/methodology/">Accuracy</a></nav></div></header>
+<nav aria-label="Main"><a href="/">Calculator</a><a href="/states/">By state</a><a href="/2025-26-closures/">2025-26 closures</a><a href="/methodology/">Accuracy</a></nav></div></header>
 <main class="wrap"><p class="crumb"><a href="/">Home</a> / About</p>
 <h1>About</h1>
 <p>Snow Day Forecaster is a free, independent snow day calculator. It is built and maintained by Omnia Ventures. We are not affiliated with any school district, weather service or news outlet.</p>
@@ -81,7 +95,8 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color
 <p>You are welcome to cite our forecasts and data with a link. We can provide a free embeddable version and district-level numbers during storms.</p>
 </main>
 <footer><div class="wrap">
-<p><a href="/about/">About</a> · <a href="/methodology/">Methodology</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>
+<p><a href="/snow-day-tomorrow/">Snow day tomorrow</a> · <a href="/school-closing-predictions/">School closing predictions</a> · <a href="/two-hour-delay/">Two-hour delays</a> · <a href="/cold-day-school-closings/">Cold days</a> · <a href="/lake-effect-snow/">Lake-effect snow</a> · <a href="/glossary/">Glossary</a></p>
+<p><a href="/about/">About</a> · <a href="/methodology/">Methodology</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/llms.txt">llms.txt</a></p>
 <p>Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a> (CC BY 4.0) and the <a href="https://www.weather.gov/" rel="noopener">National Weather Service</a>. Probabilities are estimates; your school district makes the call.</p>
 <p>© 2026 Snow Day Forecaster</p></div></footer>
 </body>

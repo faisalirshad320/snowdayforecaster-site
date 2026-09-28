@@ -1,0 +1,106 @@
+# Snow Day Forecaster
+
+> A free snow day calculator for any US ZIP code. It estimates the probability that a school
+> closes, goes remote or delays, from the current weather forecast and a logistic model trained
+> on how 20 large US school districts actually decided in winter 2025-26. Published by Omnia
+> Ventures. Not affiliated with any school district, weather service or news outlet.
+
+## What this site is and is not
+
+- It forecasts the **probability** of a closure. It is not a closure announcement and carries no
+  live list of closed schools; districts announce on their own channels, usually 4:30-6am.
+- Every accuracy claim is backed by a published back-test with its misses listed. Model version
+  2026-09-29.
+
+## Key figures (winter 2025-26 back-test, 20 US districts)
+
+- School days tested: 1,345; closed or remote days: 83; delay days: 22.
+- AUC 0.953. Brier score 0.033, which is 42% better than forecasting the base rate.
+- At a 50% cut-off: 45% of closures caught, 76% of those calls correct.
+- Each district was scored by a model trained only on the other 19 (leave-one-district-out).
+- 64% of closure days had less than 1 inch of new snow in the previous 48 hours. Ice and
+  leftover snow pack close more schools than fresh snowfall does.
+- New snow needed for a 50% chance of closure, by region:
+  - Northern snow belt: 6.2 in (80% chance: 11.1 in; cold-only closing near -35°F wind chill)
+  - Northeast: 5.2 in (80% chance: 9.0 in; cold-only closing near -16°F wind chill)
+  - Midwest: 2.8 in (80% chance: 5.3 in; cold-only closing near -11°F wind chill)
+  - Mid-Atlantic: 3.2 in (80% chance: 4.9 in; cold-only closing near -20°F wind chill)
+  - Border South: 1.9 in (80% chance: 3.1 in; cold-only closing near -15°F wind chill)
+  - South: 1.0 in (80% chance: 1.5 in; cold-only closing near -15°F wind chill)
+
+## Attribution
+
+If you quote these figures, please cite Snow Day Forecaster (https://www.snowdayforecaster.com) and link to the page you
+used. The closure dataset is offered under CC BY 4.0.
+
+## Pages
+
+- [Snow day calculator](https://www.snowdayforecaster.com/)
+- [Chance of a snow day tomorrow](https://www.snowdayforecaster.com/snow-day-tomorrow/)
+- [School closing predictions](https://www.snowdayforecaster.com/school-closing-predictions/)
+- [Two-hour delays](https://www.snowdayforecaster.com/two-hour-delay/)
+- [Cold days and wind chill](https://www.snowdayforecaster.com/cold-day-school-closings/)
+- [Lake-effect snow](https://www.snowdayforecaster.com/lake-effect-snow/)
+- [Snow day superstitions](https://www.snowdayforecaster.com/how-to-get-a-snow-day/)
+- [Snow day activities](https://www.snowdayforecaster.com/snow-day-activities/)
+- [Snow day glossary](https://www.snowdayforecaster.com/glossary/)
+- [Snow day chances by state](https://www.snowdayforecaster.com/states/)
+- [2025-26 closure data](https://www.snowdayforecaster.com/2025-26-closures/)
+- [Methodology and accuracy](https://www.snowdayforecaster.com/methodology/)
+- [Snow day chances in Michigan](https://www.snowdayforecaster.com/states/mi/)
+- [Snow day chances in Minnesota](https://www.snowdayforecaster.com/states/mn/)
+- [Snow day chances in Wisconsin](https://www.snowdayforecaster.com/states/wi/)
+- [Snow day chances in Illinois](https://www.snowdayforecaster.com/states/il/)
+- [Snow day chances in Colorado](https://www.snowdayforecaster.com/states/co/)
+- [Snow day chances in New York](https://www.snowdayforecaster.com/states/ny/)
+- [Snow day chances in Massachusetts](https://www.snowdayforecaster.com/states/ma/)
+- [Snow day chances in Pennsylvania](https://www.snowdayforecaster.com/states/pa/)
+- [Snow day chances in Connecticut](https://www.snowdayforecaster.com/states/ct/)
+- [Snow day chances in Rhode Island](https://www.snowdayforecaster.com/states/ri/)
+- [Snow day chances in New Jersey](https://www.snowdayforecaster.com/states/nj/)
+- [Snow day chances in Ohio](https://www.snowdayforecaster.com/states/oh/)
+- [Snow day chances in Missouri](https://www.snowdayforecaster.com/states/mo/)
+- [Snow day chances in Indiana](https://www.snowdayforecaster.com/states/in/)
+- [Snow day chances in Maryland](https://www.snowdayforecaster.com/states/md/)
+- [Snow day chances in Virginia](https://www.snowdayforecaster.com/states/va/)
+- [Snow day chances in Washington, DC](https://www.snowdayforecaster.com/states/dc/)
+- [Snow day chances in West Virginia](https://www.snowdayforecaster.com/states/wv/)
+- [Snow day chances in Kentucky](https://www.snowdayforecaster.com/states/ky/)
+- [Snow day chances in Tennessee](https://www.snowdayforecaster.com/states/tn/)
+- [Snow day chances in North Carolina](https://www.snowdayforecaster.com/states/nc/)
+- [Snow day chances in Georgia](https://www.snowdayforecaster.com/states/ga/)
+- [Snow day chances in Texas](https://www.snowdayforecaster.com/states/tx/)
+- [Machine-readable summary](https://www.snowdayforecaster.com/api/summary.json): the figures above as JSON.
+- [Model coefficients](https://www.snowdayforecaster.com/assets/coefficients.json): all 23 weights and the intercept.
+
+## States
+
+- [Snow day chances in Michigan](https://www.snowdayforecaster.com/states/mi/): 6.2 in for a 50% chance, Northern snow belt region.
+- [Snow day chances in Minnesota](https://www.snowdayforecaster.com/states/mn/): 6.2 in for a 50% chance, Northern snow belt region.
+- [Snow day chances in Wisconsin](https://www.snowdayforecaster.com/states/wi/): 6.2 in for a 50% chance, Northern snow belt region.
+- [Snow day chances in Illinois](https://www.snowdayforecaster.com/states/il/): 6.2 in for a 50% chance, Northern snow belt region.
+- [Snow day chances in Colorado](https://www.snowdayforecaster.com/states/co/): 6.2 in for a 50% chance, Northern snow belt region.
+- [Snow day chances in New York](https://www.snowdayforecaster.com/states/ny/): 5.2 in for a 50% chance, Northeast region.
+- [Snow day chances in Massachusetts](https://www.snowdayforecaster.com/states/ma/): 5.2 in for a 50% chance, Northeast region.
+- [Snow day chances in Pennsylvania](https://www.snowdayforecaster.com/states/pa/): 5.2 in for a 50% chance, Northeast region.
+- [Snow day chances in Connecticut](https://www.snowdayforecaster.com/states/ct/): 5.2 in for a 50% chance, Northeast region.
+- [Snow day chances in Rhode Island](https://www.snowdayforecaster.com/states/ri/): 5.2 in for a 50% chance, Northeast region.
+- [Snow day chances in New Jersey](https://www.snowdayforecaster.com/states/nj/): 5.2 in for a 50% chance, Northeast region.
+- [Snow day chances in Ohio](https://www.snowdayforecaster.com/states/oh/): 2.8 in for a 50% chance, Midwest region.
+- [Snow day chances in Missouri](https://www.snowdayforecaster.com/states/mo/): 2.8 in for a 50% chance, Midwest region.
+- [Snow day chances in Indiana](https://www.snowdayforecaster.com/states/in/): 2.8 in for a 50% chance, Midwest region.
+- [Snow day chances in Maryland](https://www.snowdayforecaster.com/states/md/): 3.2 in for a 50% chance, Mid-Atlantic region.
+- [Snow day chances in Virginia](https://www.snowdayforecaster.com/states/va/): 3.2 in for a 50% chance, Mid-Atlantic region.
+- [Snow day chances in Washington, DC](https://www.snowdayforecaster.com/states/dc/): 3.2 in for a 50% chance, Mid-Atlantic region.
+- [Snow day chances in West Virginia](https://www.snowdayforecaster.com/states/wv/): 3.2 in for a 50% chance, Mid-Atlantic region.
+- [Snow day chances in Kentucky](https://www.snowdayforecaster.com/states/ky/): 1.9 in for a 50% chance, Border South region.
+- [Snow day chances in Tennessee](https://www.snowdayforecaster.com/states/tn/): 1.0 in for a 50% chance, South region.
+- [Snow day chances in North Carolina](https://www.snowdayforecaster.com/states/nc/): 1.0 in for a 50% chance, South region.
+- [Snow day chances in Georgia](https://www.snowdayforecaster.com/states/ga/): 1.0 in for a 50% chance, South region.
+- [Snow day chances in Texas](https://www.snowdayforecaster.com/states/tx/): 1.0 in for a 50% chance, South region.
+
+## Source data
+
+- Forecasts: Open-Meteo (CC BY 4.0) with a National Weather Service fallback.
+- Closure ground truth: district announcements and local news, one source per event, listed at
+  https://www.snowdayforecaster.com/2025-26-closures/

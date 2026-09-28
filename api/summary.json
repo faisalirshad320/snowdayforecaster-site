@@ -1,0 +1,345 @@
+{
+ "name": "Snow Day Forecaster",
+ "url": "https://www.snowdayforecaster.com",
+ "updated": "2026-09-29",
+ "model_version": "2026-09-29",
+ "license": "CC BY 4.0",
+ "attribution": "Snow Day Forecaster (https://www.snowdayforecaster.com)",
+ "what_it_does": "Estimates the probability that a US school closes, goes remote or delays, from the current forecast for a ZIP code.",
+ "what_it_is_not": "Not a closure announcement and not a live list of closed schools.",
+ "backtest": {
+  "season": "2025-26",
+  "districts": 20,
+  "school_days": 1345,
+  "closed_or_remote_days": 83,
+  "delay_days": 22,
+  "auc": 0.953,
+  "brier": 0.033,
+  "brier_skill_vs_climatology": 0.422,
+  "hit_rate_at_50pct": 0.446,
+  "precision_at_50pct": 0.755,
+  "validation": "leave-one-district-out",
+  "calibration": [
+   {
+    "band": "0%-10%",
+    "mean_forecast": 0.013,
+    "observed_closure_rate": 0.015,
+    "school_days": 1190
+   },
+   {
+    "band": "10%-30%",
+    "mean_forecast": 0.173,
+    "observed_closure_rate": 0.215,
+    "school_days": 79
+   },
+   {
+    "band": "30%-50%",
+    "mean_forecast": 0.385,
+    "observed_closure_rate": 0.407,
+    "school_days": 27
+   },
+   {
+    "band": "50%-70%",
+    "mean_forecast": 0.576,
+    "observed_closure_rate": 0.625,
+    "school_days": 16
+   },
+   {
+    "band": "70%-90%",
+    "mean_forecast": 0.825,
+    "observed_closure_rate": 0.727,
+    "school_days": 11
+   },
+   {
+    "band": "90%-100%",
+    "mean_forecast": 0.971,
+    "observed_closure_rate": 0.864,
+    "school_days": 22
+   }
+  ]
+ },
+ "headline_finding": {
+  "statement": "64% of tracked 2025-26 closure days had less than 1 inch of new snow in the previous 48 hours.",
+  "closure_days": 83,
+  "of_which_under_1_inch": 53
+ },
+ "thresholds_by_region": {
+  "north": {
+   "label": "Northern snow belt",
+   "snow_inches_for_50pct": 6.2,
+   "snow_inches_for_80pct": 11.1,
+   "cold_only_50pct_wind_chill_f": -35,
+   "districts_tracked": 6
+  },
+  "northeast": {
+   "label": "Northeast",
+   "snow_inches_for_50pct": 5.2,
+   "snow_inches_for_80pct": 9.0,
+   "cold_only_50pct_wind_chill_f": -16,
+   "districts_tracked": 3
+  },
+  "midwest": {
+   "label": "Midwest",
+   "snow_inches_for_50pct": 2.8,
+   "snow_inches_for_80pct": 5.3,
+   "cold_only_50pct_wind_chill_f": -11,
+   "districts_tracked": 2
+  },
+  "midatlantic": {
+   "label": "Mid-Atlantic",
+   "snow_inches_for_50pct": 3.2,
+   "snow_inches_for_80pct": 4.9,
+   "cold_only_50pct_wind_chill_f": -20,
+   "districts_tracked": 4
+  },
+  "south_border": {
+   "label": "Border South",
+   "snow_inches_for_50pct": 1.9,
+   "snow_inches_for_80pct": 3.1,
+   "cold_only_50pct_wind_chill_f": -15,
+   "districts_tracked": 1
+  },
+  "south": {
+   "label": "South",
+   "snow_inches_for_50pct": 1.0,
+   "snow_inches_for_80pct": 1.5,
+   "cold_only_50pct_wind_chill_f": -15,
+   "districts_tracked": 4
+  }
+ },
+ "states": [
+  {
+   "state": "Michigan",
+   "abbr": "MI",
+   "region": "north",
+   "url": "https://www.snowdayforecaster.com/states/mi/",
+   "snow_inches_for_50pct": 6.2,
+   "tracked_districts": [
+    "Detroit Public Schools Community District"
+   ]
+  },
+  {
+   "state": "Minnesota",
+   "abbr": "MN",
+   "region": "north",
+   "url": "https://www.snowdayforecaster.com/states/mn/",
+   "snow_inches_for_50pct": 6.2,
+   "tracked_districts": [
+    "Minneapolis Public Schools"
+   ]
+  },
+  {
+   "state": "Wisconsin",
+   "abbr": "WI",
+   "region": "north",
+   "url": "https://www.snowdayforecaster.com/states/wi/",
+   "snow_inches_for_50pct": 6.2,
+   "tracked_districts": [
+    "Milwaukee Public Schools"
+   ]
+  },
+  {
+   "state": "Illinois",
+   "abbr": "IL",
+   "region": "north",
+   "url": "https://www.snowdayforecaster.com/states/il/",
+   "snow_inches_for_50pct": 6.2,
+   "tracked_districts": [
+    "Chicago Public Schools"
+   ]
+  },
+  {
+   "state": "Colorado",
+   "abbr": "CO",
+   "region": "north",
+   "url": "https://www.snowdayforecaster.com/states/co/",
+   "snow_inches_for_50pct": 6.2,
+   "tracked_districts": [
+    "Denver Public Schools"
+   ]
+  },
+  {
+   "state": "New York",
+   "abbr": "NY",
+   "region": "northeast",
+   "url": "https://www.snowdayforecaster.com/states/ny/",
+   "snow_inches_for_50pct": 5.2,
+   "tracked_districts": [
+    "New York City Public Schools",
+    "Buffalo Public Schools"
+   ]
+  },
+  {
+   "state": "Massachusetts",
+   "abbr": "MA",
+   "region": "northeast",
+   "url": "https://www.snowdayforecaster.com/states/ma/",
+   "snow_inches_for_50pct": 5.2,
+   "tracked_districts": [
+    "Boston Public Schools"
+   ]
+  },
+  {
+   "state": "Pennsylvania",
+   "abbr": "PA",
+   "region": "northeast",
+   "url": "https://www.snowdayforecaster.com/states/pa/",
+   "snow_inches_for_50pct": 5.2,
+   "tracked_districts": [
+    "School District of Philadelphia",
+    "Pittsburgh Public Schools"
+   ]
+  },
+  {
+   "state": "Connecticut",
+   "abbr": "CT",
+   "region": "northeast",
+   "url": "https://www.snowdayforecaster.com/states/ct/",
+   "snow_inches_for_50pct": 5.2,
+   "tracked_districts": []
+  },
+  {
+   "state": "Rhode Island",
+   "abbr": "RI",
+   "region": "northeast",
+   "url": "https://www.snowdayforecaster.com/states/ri/",
+   "snow_inches_for_50pct": 5.2,
+   "tracked_districts": []
+  },
+  {
+   "state": "New Jersey",
+   "abbr": "NJ",
+   "region": "northeast",
+   "url": "https://www.snowdayforecaster.com/states/nj/",
+   "snow_inches_for_50pct": 5.2,
+   "tracked_districts": []
+  },
+  {
+   "state": "Ohio",
+   "abbr": "OH",
+   "region": "midwest",
+   "url": "https://www.snowdayforecaster.com/states/oh/",
+   "snow_inches_for_50pct": 2.8,
+   "tracked_districts": [
+    "Columbus City Schools"
+   ]
+  },
+  {
+   "state": "Missouri",
+   "abbr": "MO",
+   "region": "midwest",
+   "url": "https://www.snowdayforecaster.com/states/mo/",
+   "snow_inches_for_50pct": 2.8,
+   "tracked_districts": [
+    "Kansas City Public Schools"
+   ]
+  },
+  {
+   "state": "Indiana",
+   "abbr": "IN",
+   "region": "midwest",
+   "url": "https://www.snowdayforecaster.com/states/in/",
+   "snow_inches_for_50pct": 2.8,
+   "tracked_districts": []
+  },
+  {
+   "state": "Maryland",
+   "abbr": "MD",
+   "region": "midatlantic",
+   "url": "https://www.snowdayforecaster.com/states/md/",
+   "snow_inches_for_50pct": 3.2,
+   "tracked_districts": [
+    "Baltimore County Public Schools"
+   ]
+  },
+  {
+   "state": "Virginia",
+   "abbr": "VA",
+   "region": "midatlantic",
+   "url": "https://www.snowdayforecaster.com/states/va/",
+   "snow_inches_for_50pct": 3.2,
+   "tracked_districts": [
+    "Fairfax County Public Schools"
+   ]
+  },
+  {
+   "state": "Washington, DC",
+   "abbr": "DC",
+   "region": "midatlantic",
+   "url": "https://www.snowdayforecaster.com/states/dc/",
+   "snow_inches_for_50pct": 3.2,
+   "tracked_districts": [
+    "DC Public Schools"
+   ]
+  },
+  {
+   "state": "West Virginia",
+   "abbr": "WV",
+   "region": "midatlantic",
+   "url": "https://www.snowdayforecaster.com/states/wv/",
+   "snow_inches_for_50pct": 3.2,
+   "tracked_districts": []
+  },
+  {
+   "state": "Kentucky",
+   "abbr": "KY",
+   "region": "south_border",
+   "url": "https://www.snowdayforecaster.com/states/ky/",
+   "snow_inches_for_50pct": 1.9,
+   "tracked_districts": [
+    "Jefferson County Public Schools"
+   ]
+  },
+  {
+   "state": "Tennessee",
+   "abbr": "TN",
+   "region": "south",
+   "url": "https://www.snowdayforecaster.com/states/tn/",
+   "snow_inches_for_50pct": 1.0,
+   "tracked_districts": [
+    "Metro Nashville Public Schools"
+   ]
+  },
+  {
+   "state": "North Carolina",
+   "abbr": "NC",
+   "region": "south",
+   "url": "https://www.snowdayforecaster.com/states/nc/",
+   "snow_inches_for_50pct": 1.0,
+   "tracked_districts": [
+    "Charlotte-Mecklenburg Schools"
+   ]
+  },
+  {
+   "state": "Georgia",
+   "abbr": "GA",
+   "region": "south",
+   "url": "https://www.snowdayforecaster.com/states/ga/",
+   "snow_inches_for_50pct": 1.0,
+   "tracked_districts": [
+    "Atlanta Public Schools"
+   ]
+  },
+  {
+   "state": "Texas",
+   "abbr": "TX",
+   "region": "south",
+   "url": "https://www.snowdayforecaster.com/states/tx/",
+   "snow_inches_for_50pct": 1.0,
+   "tracked_districts": [
+    "Dallas ISD"
+   ]
+  }
+ ],
+ "limits": [
+  "Back-test used observed weather; live forecasts add their own error, especially beyond one day.",
+  "Ice storms are under-recorded in gridded weather data, so some are missed.",
+  "Lake-effect snow bands fall between grid points and are systematically under-read.",
+  "District-level policy is not modelled; results are regional estimates."
+ ],
+ "data_sources": [
+  "Open-Meteo (CC BY 4.0)",
+  "National Weather Service",
+  "District announcements and local news"
+ ]
+}
