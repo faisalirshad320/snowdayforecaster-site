@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snow Day Calculator: Chance of a Snow Day Tomorrow by ZIP</title>
+<meta name="description" content="Free snow day calculator. Enter your ZIP code to see the chance school is closed tomorrow, tested on 20 US districts&#x27; real 2025-26 closures.">
+<link rel="canonical" href="https://www.snowdayforecaster.com/">
+<meta name="theme-color" content="#1d5bb8">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Snow Day Forecaster">
+<meta property="og:title" content="Snow Day Calculator: Chance of a Snow Day Tomorrow by ZIP"><meta property="og:description" content="Free snow day calculator. Enter your ZIP code to see the chance school is closed tomorrow, tested on 20 US districts&#x27; real 2025-26 closures.">
+<meta property="og:url" content="https://www.snowdayforecaster.com/"><meta property="og:image" content="https://www.snowdayforecaster.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>:root{--ink:#0f2233;--muted:#4a5d70;--bg:#f4f7fa;--card:#fff;--line:#d9e3ec;--accent:#1d5bb8;--accent-ink:#fff;
+--b0:#7d93a8;--b1:#3f86d8;--b2:#d9a21b;--b3:#e0762b;--b4:#cf3a26;--b5:#8f1d44;--warn:#fff4d6;--warn-ink:#5c4400;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#e6eef6;--muted:#a3b4c5;--bg:#0c1722;--card:#132232;--line:#243a50;
+--accent:#7fb2ff;--accent-ink:#08131d;--warn:#3a2f10;--warn-ink:#f6dd9a;color-scheme:dark}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--accent)}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:1px solid var(--line);background:var(--card)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand svg{width:22px;height:22px}
+nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-size:15px;display:inline-block;padding:10px 0}nav a:hover{color:var(--ink)}
+main{padding:28px 0 48px}
+h1{font-size:clamp(30px,6vw,42px);line-height:1.1;letter-spacing:-.02em;margin:0 0 10px}
+h2{font-size:23px;letter-spacing:-.01em;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 6px}
+.lede{color:var(--muted);font-size:18px;margin:0 0 22px;max-width:36em}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+label{display:block;font-weight:600;margin:0 0 6px}
+.row{display:flex;gap:8px}
+input#zip{flex:1;min-width:0;font:inherit;font-size:22px;letter-spacing:.08em;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);min-height:52px}
+button{font:inherit;cursor:pointer}
+.go{background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;padding:0 20px;font-weight:700;min-height:52px}
+.link{background:none;border:0;color:var(--accent);padding:10px 0 0;text-decoration:underline;font-size:15px;min-height:44px}
+.status{min-height:1.4em;margin:10px 0 0;color:var(--muted);font-size:15px}.status.err{color:var(--b4)}
+#result{margin-top:14px}
+.place{font-weight:700;margin:0 0 8px}
+.alert{background:var(--warn);color:var(--warn-ink);border-radius:8px;padding:8px 12px;font-size:15px;margin:0 0 10px}
+.days{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.day{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--bg);--c:var(--b0)}
+.day.b1{--c:var(--b1)}.day.b2{--c:var(--b2)}.day.b3{--c:var(--b3)}.day.b4{--c:var(--b4)}.day.b5{--c:var(--b5)}
+.day.lead{grid-column:1/-1}
+.when{margin:0;font-size:14px;color:var(--muted)}
+.pct{margin:2px 0 0;font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.lead .pct{font-size:56px;line-height:1.05}.pct.wk{font-size:22px;color:var(--muted)}
+.verdict{margin:0 0 8px;font-weight:600;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.verdict:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
+.delay{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:99px;padding:1px 8px;color:var(--muted)}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}.bar i{display:block;height:100%;background:var(--c);border-radius:99px}
+.why{margin:8px 0 0;font-size:14px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted);margin:12px 0 0}
+.share button{margin-top:12px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 14px;min-height:44px}
+table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.fact{font-size:20px;line-height:1.4;border-left:4px solid var(--accent);padding:4px 0 4px 14px;margin:16px 0}
+details{border-bottom:1px solid var(--line);padding:12px 0}summary{font-weight:600;cursor:pointer;min-height:24px}details p{margin:8px 0 0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.grid3>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.grid3 b{display:block;font-size:26px;font-variant-numeric:tabular-nums}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color:var(--muted)}footer a{color:var(--muted)}footer p{margin:6px 0}
+.crumb{font-size:14px;color:var(--muted);margin:0 0 10px}.crumb a{color:var(--muted)}
+.pill{font-size:12px;font-weight:700;border-radius:99px;padding:2px 8px;white-space:nowrap}
+.pill.closed{background:#fde2de;color:#8a1f12}.pill.remote{background:#dfeafc;color:#123f7d}.pill.delay{background:#fdf0cf;color:#5c4400}
+@media (max-width:560px){.grid3{grid-template-columns:1fr}nav a{margin-left:10px}.lead .pct{font-size:48px}}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Snow Day Forecaster","url":"https://www.snowdayforecaster.com","logo":"https://www.snowdayforecaster.com/icon-512.png"},{"@context":"https://schema.org","@type":"WebApplication","name":"Snow Day Calculator","url":"https://www.snowdayforecaster.com/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free snow day calculator: chance of school closing tomorrow for any US ZIP code."},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the chances of a snow day tomorrow?","acceptedAnswer":{"@type":"Answer","text":"Enter your ZIP code above. The calculator reads the latest forecast for your area and returns a percentage for tomorrow and the next two days, based on how 20 large US districts actually decided in winter 2025-26."}},{"@type":"Question","name":"How accurate is the snow day calculator?","acceptedAnswer":{"@type":"Answer","text":"We tested it on 1,345 school days in 20 districts. When it said 50-70%, schools closed or went remote 62% of the time. Its Brier score was 0.033, 42% better than always guessing the average. See the full back-test on the methodology page."}},{"@type":"Question","name":"Why does it say my chance is high when little snow is forecast?","acceptedAnswer":{"@type":"Answer","text":"Because that is how districts behave. 64% of the 2025-26 closure days we tracked had less than 1 inch of new snow in the previous 48 hours. Most were the days after a storm, when ice and packed snow were still on the roads, or days of freezing rain or extreme cold."}},{"@type":"Question","name":"Does it work for my school district?","acceptedAnswer":{"@type":"Answer","text":"It works for any US ZIP code. It adjusts for how used your region is to snow: the same inch of ice closes schools in Atlanta or Dallas but not in Buffalo. It does not yet know your district's own policy, so treat the result as a regional estimate."}},{"@type":"Question","name":"What about two-hour delays?","acceptedAnswer":{"@type":"Answer","text":"Delays are not modeled separately yet. In our back-test, delay days scored between normal days and closures, so a result of roughly 12-45% is labeled \u201cDelay possible\u201d."}},{"@type":"Question","name":"Is it free? Do I need an account?","acceptedAnswer":{"@type":"Answer","text":"Yes, it is free, and there is no sign-up. Your ZIP code is stored only in your own browser so the page remembers it."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M4.9 6.5l14.2 11M19.1 6.5 4.9 17.5M9 3.5l3 2 3-2M9 20.5l3-2 3 2"/></svg>Snow Day Forecaster</a>
+<nav aria-label="Main"><a href="/">Calculator</a><a href="/2025-26-closures/">2025-26 closures</a><a href="/methodology/">Accuracy</a></nav></div></header>
+<main class="wrap">
+<h1>Snow Day Calculator</h1>
+<p class="lede">The chance your school closes tomorrow, from the newest forecast for your ZIP code. Free, no sign-up, and tested against real 2025-26 closures.</p>
+<section class="tool" aria-label="Snow day calculator">
+<form id="zip-form" novalidate>
+<label for="zip">Your ZIP code</label>
+<div class="row"><input id="zip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="e.g. 14201" required>
+<button class="go" type="submit">Get my odds</button></div>
+<button type="button" id="geo" class="link" hidden>Use my location instead</button>
+</form>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+<section id="result" aria-live="polite" hidden></section>
+</section>
+
+<h2>What actually closes schools</h2>
+<p class="fact">64% of the closure days we tracked in 2025-26 had less than an inch of new snow in the 48 hours before.</p>
+<p>Calculators that only count inches miss most snow days. The model weighs four things, in this order of how often they mattered:</p>
+<ul>
+<li><b>Snow and ice still on the ground.</b> 44 of 83 closure days came after the storm had ended, while roads stayed frozen.</li>
+<li><b>New frozen precipitation.</b> Snow, sleet and freezing rain in the last 48 hours, measured as water, so a quarter inch of ice counts.</li>
+<li><b>Wind chill.</b> Chicago and Milwaukee closed on January 23, 2026 with almost no snow at wind chills near −20°F.</li>
+<li><b>Where you live.</b> Southern districts close for amounts that northern districts ignore, and the model knows the difference.</li>
+</ul>
+
+<h2>How accurate is it?</h2>
+<p>We scored every school day from December 2025 to March 2026 in 20 districts, each with a version of the model that had never seen that district. Here is how often schools closed or went remote at each forecast level:</p>
+<div class="tw"><table><thead><tr><th>We said</th><th>Average forecast</th><th>Actually closed or remote</th><th>School days</th></tr></thead>
+<tbody><tr><td>0%-10%</td><td>1%</td><td>2%</td><td>1190</td></tr><tr><td>10%-30%</td><td>17%</td><td>22%</td><td>79</td></tr><tr><td>30%-50%</td><td>38%</td><td>41%</td><td>27</td></tr><tr><td>50%-70%</td><td>58%</td><td>62%</td><td>16</td></tr><tr><td>70%-90%</td><td>83%</td><td>73%</td><td>11</td></tr><tr><td>90%-100%</td><td>97%</td><td>86%</td><td>22</td></tr></tbody></table></div>
+<p><a href="/methodology/">Full methodology and back-test</a> · <a href="/2025-26-closures/">Every closure we tracked, with sources</a></p>
+
+<h2>Questions</h2>
+<details><summary>What are the chances of a snow day tomorrow?</summary><p>Enter your ZIP code above. The calculator reads the latest forecast for your area and returns a percentage for tomorrow and the next two days, based on how 20 large US districts actually decided in winter 2025-26.</p></details><details><summary>How accurate is the snow day calculator?</summary><p>We tested it on 1,345 school days in 20 districts. When it said 50-70%, schools closed or went remote 62% of the time. Its Brier score was 0.033, 42% better than always guessing the average. See the full back-test on the methodology page.</p></details><details><summary>Why does it say my chance is high when little snow is forecast?</summary><p>Because that is how districts behave. 64% of the 2025-26 closure days we tracked had less than 1 inch of new snow in the previous 48 hours. Most were the days after a storm, when ice and packed snow were still on the roads, or days of freezing rain or extreme cold.</p></details><details><summary>Does it work for my school district?</summary><p>It works for any US ZIP code. It adjusts for how used your region is to snow: the same inch of ice closes schools in Atlanta or Dallas but not in Buffalo. It does not yet know your district&#x27;s own policy, so treat the result as a regional estimate.</p></details><details><summary>What about two-hour delays?</summary><p>Delays are not modeled separately yet. In our back-test, delay days scored between normal days and closures, so a result of roughly 12-45% is labeled “Delay possible”.</p></details><details><summary>Is it free? Do I need an account?</summary><p>Yes, it is free, and there is no sign-up. Your ZIP code is stored only in your own browser so the page remembers it.</p></details>
+<script>window.SDF_COEF={"intercept":-5.818318011927942,"w":[1.5406459240730108,0.6831214310616397,1.7518326617783486,2.0367753261945767,1.7195837064415584,-0.5242913223754376,-0.6553896284484074,0.9308094564686137,-1.1463246582659532,0.4038874375982738,0.9554709232926822,-0.6530305363866543,-0.3766863182128592,-0.5110059517202186,0.7661958468452513,0.734160712840923,2.2641336017682083,-0.7277579248904411,0.9896497243340744,0.7737560726053283,0.6177744470068306,0.38165629572669885,0.0016967114120845846]};</script>
+<script src="/assets/model.js" defer></script><script src="/assets/app.js" defer></script>
+</main>
+<footer><div class="wrap">
+<p><a href="/about/">About</a> · <a href="/methodology/">Methodology</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>
+<p>Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a> (CC BY 4.0) and the <a href="https://www.weather.gov/" rel="noopener">National Weather Service</a>. Probabilities are estimates; your school district makes the call.</p>
+<p>© 2026 Snow Day Forecaster</p></div></footer>
+</body>
+</html>
