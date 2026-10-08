@@ -65,8 +65,8 @@
       var top = lead.slice().sort(function (a, b) { return b.days[0].p - a.days[0].p; })[0];
       var avg = lead.reduce(function (s, r) { return s + r.days[0].p; }, 0) / lead.length;
       var sum = document.getElementById("sb-summary");
-      if (sum) sum.textContent = "Right now the highest chance tomorrow is " + Math.round(top.days[0].p * 100) + "% in " + top.c.name +
-        "; the average across these " + lead.length + " cities is " + Math.round(avg * 100) + "%. Updated " + new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" }) + " from the latest forecast.";
+      if (sum) sum.textContent = "Right now the highest chance tomorrow is " + Math.min(99, Math.max(1, Math.round(top.days[0].p * 100))) + "% in " + top.c.name +
+        "; the average across these " + lead.length + " cities is " + Math.min(99, Math.max(1, Math.round(avg * 100))) + "%. Updated " + new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" }) + " from the latest forecast.";
     }
     el.innerHTML = h; el.removeAttribute("aria-busy");
   }
