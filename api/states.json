@@ -1,0 +1,1992 @@
+{
+ "name": "Snow Day Forecaster — state thresholds",
+ "url": "https://www.snowdayforecaster.com/states/",
+ "updated": "2026-10-08",
+ "license": "CC BY 4.0",
+ "attribution": "Snow Day Forecaster (https://www.snowdayforecaster.com)",
+ "note": "New snow (inches, plain overnight snowfall, no ice, no existing pack) needed for a 50% / 80% chance that a school district closes; cold-only threshold is wind chill °F. Regional model; see /methodology/.",
+ "regions": {
+  "north": {
+   "label": "Northern snow belt",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35
+  },
+  "northeast": {
+   "label": "Northeast",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16
+  },
+  "midwest": {
+   "label": "Midwest",
+   "s50": 2.8,
+   "s80": 5.3,
+   "cold": -11
+  },
+  "midatlantic": {
+   "label": "Mid-Atlantic",
+   "s50": 3.2,
+   "s80": 4.9,
+   "cold": -20
+  },
+  "south_border": {
+   "label": "Border South",
+   "s50": 1.9,
+   "s80": 3.1,
+   "cold": -15
+  },
+  "south": {
+   "label": "South",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15
+  }
+ },
+ "states": [
+  {
+   "code": "MI",
+   "name": "Michigan",
+   "url": "https://www.snowdayforecaster.com/states/mi/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Detroit",
+     "zip": "48226",
+     "avg_snowfall_in": 33
+    },
+    {
+     "name": "Grand Rapids",
+     "zip": "49503",
+     "avg_snowfall_in": 75
+    },
+    {
+     "name": "Lansing",
+     "zip": "48933",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Flint",
+     "zip": "48502",
+     "avg_snowfall_in": 47
+    },
+    {
+     "name": "Ann Arbor",
+     "zip": "48104",
+     "avg_snowfall_in": 56
+    },
+    {
+     "name": "Kalamazoo",
+     "zip": "49007",
+     "avg_snowfall_in": 70
+    },
+    {
+     "name": "Traverse City",
+     "zip": "49684",
+     "avg_snowfall_in": 100
+    },
+    {
+     "name": "Marquette",
+     "zip": "49855",
+     "avg_snowfall_in": 150
+    }
+   ]
+  },
+  {
+   "code": "MN",
+   "name": "Minnesota",
+   "url": "https://www.snowdayforecaster.com/states/mn/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Minneapolis",
+     "zip": "55401",
+     "avg_snowfall_in": 52
+    },
+    {
+     "name": "St. Paul",
+     "zip": "55101",
+     "avg_snowfall_in": 52
+    },
+    {
+     "name": "Duluth",
+     "zip": "55802",
+     "avg_snowfall_in": 90
+    },
+    {
+     "name": "Rochester",
+     "zip": "55902",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "St. Cloud",
+     "zip": "56301",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Mankato",
+     "zip": "56001",
+     "avg_snowfall_in": 40
+    },
+    {
+     "name": "Moorhead",
+     "zip": "56560",
+     "avg_snowfall_in": 50
+    }
+   ]
+  },
+  {
+   "code": "WI",
+   "name": "Wisconsin",
+   "url": "https://www.snowdayforecaster.com/states/wi/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Milwaukee",
+     "zip": "53202",
+     "avg_snowfall_in": 47
+    },
+    {
+     "name": "Madison",
+     "zip": "53703",
+     "avg_snowfall_in": 52
+    },
+    {
+     "name": "Green Bay",
+     "zip": "54301",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Eau Claire",
+     "zip": "54701",
+     "avg_snowfall_in": 55
+    },
+    {
+     "name": "La Crosse",
+     "zip": "54601",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Wausau",
+     "zip": "54401",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Kenosha",
+     "zip": "53140",
+     "avg_snowfall_in": 40
+    }
+   ]
+  },
+  {
+   "code": "IL",
+   "name": "Illinois",
+   "url": "https://www.snowdayforecaster.com/states/il/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Chicago",
+     "zip": "60601",
+     "avg_snowfall_in": 38
+    },
+    {
+     "name": "Naperville",
+     "zip": "60540",
+     "avg_snowfall_in": 37
+    },
+    {
+     "name": "Rockford",
+     "zip": "61101",
+     "avg_snowfall_in": 36
+    },
+    {
+     "name": "Peoria",
+     "zip": "61602",
+     "avg_snowfall_in": 25
+    },
+    {
+     "name": "Champaign",
+     "zip": "61820",
+     "avg_snowfall_in": 23
+    },
+    {
+     "name": "Springfield",
+     "zip": "62701",
+     "avg_snowfall_in": 20
+    },
+    {
+     "name": "Joliet",
+     "zip": "60432",
+     "avg_snowfall_in": 33
+    }
+   ]
+  },
+  {
+   "code": "CO",
+   "name": "Colorado",
+   "url": "https://www.snowdayforecaster.com/states/co/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Denver",
+     "zip": "80202",
+     "avg_snowfall_in": 57
+    },
+    {
+     "name": "Colorado Springs",
+     "zip": "80903",
+     "avg_snowfall_in": 38
+    },
+    {
+     "name": "Fort Collins",
+     "zip": "80521",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Boulder",
+     "zip": "80302",
+     "avg_snowfall_in": 85
+    },
+    {
+     "name": "Pueblo",
+     "zip": "81003",
+     "avg_snowfall_in": 30
+    },
+    {
+     "name": "Grand Junction",
+     "zip": "81501",
+     "avg_snowfall_in": 20
+    },
+    {
+     "name": "Aurora",
+     "zip": "80010",
+     "avg_snowfall_in": 55
+    }
+   ]
+  },
+  {
+   "code": "NY",
+   "name": "New York",
+   "url": "https://www.snowdayforecaster.com/states/ny/",
+   "tier": "northeast",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "New York City",
+     "zip": "10007",
+     "avg_snowfall_in": 29
+    },
+    {
+     "name": "Buffalo",
+     "zip": "14202",
+     "avg_snowfall_in": 95
+    },
+    {
+     "name": "Rochester",
+     "zip": "14604",
+     "avg_snowfall_in": 100
+    },
+    {
+     "name": "Syracuse",
+     "zip": "13202",
+     "avg_snowfall_in": 125
+    },
+    {
+     "name": "Albany",
+     "zip": "12207",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Hempstead (Long Island)",
+     "zip": "11550",
+     "avg_snowfall_in": 25
+    },
+    {
+     "name": "Binghamton",
+     "zip": "13901",
+     "avg_snowfall_in": 80
+    },
+    {
+     "name": "Yonkers",
+     "zip": "10701",
+     "avg_snowfall_in": 30
+    }
+   ]
+  },
+  {
+   "code": "MA",
+   "name": "Massachusetts",
+   "url": "https://www.snowdayforecaster.com/states/ma/",
+   "tier": "northeast",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Boston",
+     "zip": "02108",
+     "avg_snowfall_in": 49
+    },
+    {
+     "name": "Worcester",
+     "zip": "01608",
+     "avg_snowfall_in": 65
+    },
+    {
+     "name": "Springfield",
+     "zip": "01103",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Lowell",
+     "zip": "01852",
+     "avg_snowfall_in": 55
+    },
+    {
+     "name": "Pittsfield",
+     "zip": "01201",
+     "avg_snowfall_in": 70
+    },
+    {
+     "name": "Hyannis (Cape Cod)",
+     "zip": "02601",
+     "avg_snowfall_in": 25
+    },
+    {
+     "name": "New Bedford",
+     "zip": "02740",
+     "avg_snowfall_in": 30
+    }
+   ]
+  },
+  {
+   "code": "PA",
+   "name": "Pennsylvania",
+   "url": "https://www.snowdayforecaster.com/states/pa/",
+   "tier": "northeast",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Philadelphia",
+     "zip": "19107",
+     "avg_snowfall_in": 23
+    },
+    {
+     "name": "Pittsburgh",
+     "zip": "15222",
+     "avg_snowfall_in": 44
+    },
+    {
+     "name": "Erie",
+     "zip": "16501",
+     "avg_snowfall_in": 100
+    },
+    {
+     "name": "Harrisburg",
+     "zip": "17101",
+     "avg_snowfall_in": 30
+    },
+    {
+     "name": "Scranton",
+     "zip": "18503",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Allentown",
+     "zip": "18101",
+     "avg_snowfall_in": 32
+    },
+    {
+     "name": "State College",
+     "zip": "16801",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Lancaster",
+     "zip": "17602",
+     "avg_snowfall_in": 28
+    }
+   ]
+  },
+  {
+   "code": "CT",
+   "name": "Connecticut",
+   "url": "https://www.snowdayforecaster.com/states/ct/",
+   "tier": "northeast",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Hartford",
+     "zip": "06103",
+     "avg_snowfall_in": 40
+    },
+    {
+     "name": "New Haven",
+     "zip": "06510",
+     "avg_snowfall_in": 30
+    },
+    {
+     "name": "Bridgeport",
+     "zip": "06604",
+     "avg_snowfall_in": 26
+    },
+    {
+     "name": "Stamford",
+     "zip": "06901",
+     "avg_snowfall_in": 28
+    },
+    {
+     "name": "Waterbury",
+     "zip": "06702",
+     "avg_snowfall_in": 38
+    },
+    {
+     "name": "Norwich",
+     "zip": "06360",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Danbury",
+     "zip": "06810",
+     "avg_snowfall_in": 40
+    }
+   ]
+  },
+  {
+   "code": "RI",
+   "name": "Rhode Island",
+   "url": "https://www.snowdayforecaster.com/states/ri/",
+   "tier": "northeast",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Providence",
+     "zip": "02903",
+     "avg_snowfall_in": 33
+    },
+    {
+     "name": "Warwick",
+     "zip": "02886",
+     "avg_snowfall_in": 32
+    },
+    {
+     "name": "Cranston",
+     "zip": "02920",
+     "avg_snowfall_in": 33
+    },
+    {
+     "name": "Pawtucket",
+     "zip": "02860",
+     "avg_snowfall_in": 34
+    },
+    {
+     "name": "Woonsocket",
+     "zip": "02895",
+     "avg_snowfall_in": 40
+    },
+    {
+     "name": "Newport",
+     "zip": "02840",
+     "avg_snowfall_in": 22
+    },
+    {
+     "name": "Westerly",
+     "zip": "02891",
+     "avg_snowfall_in": 25
+    }
+   ]
+  },
+  {
+   "code": "NJ",
+   "name": "New Jersey",
+   "url": "https://www.snowdayforecaster.com/states/nj/",
+   "tier": "northeast",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Newark",
+     "zip": "07102",
+     "avg_snowfall_in": 28
+    },
+    {
+     "name": "Jersey City",
+     "zip": "07302",
+     "avg_snowfall_in": 25
+    },
+    {
+     "name": "Trenton",
+     "zip": "08608",
+     "avg_snowfall_in": 23
+    },
+    {
+     "name": "Morristown",
+     "zip": "07960",
+     "avg_snowfall_in": 32
+    },
+    {
+     "name": "Toms River",
+     "zip": "08753",
+     "avg_snowfall_in": 18
+    },
+    {
+     "name": "Atlantic City",
+     "zip": "08401",
+     "avg_snowfall_in": 16
+    },
+    {
+     "name": "New Brunswick",
+     "zip": "08901",
+     "avg_snowfall_in": 25
+    }
+   ]
+  },
+  {
+   "code": "OH",
+   "name": "Ohio",
+   "url": "https://www.snowdayforecaster.com/states/oh/",
+   "tier": "midwest",
+   "s50": 2.8,
+   "s80": 5.3,
+   "cold": -11,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Columbus",
+     "zip": "43215",
+     "avg_snowfall_in": 22
+    },
+    {
+     "name": "Cleveland",
+     "zip": "44114",
+     "avg_snowfall_in": 64
+    },
+    {
+     "name": "Cincinnati",
+     "zip": "45202",
+     "avg_snowfall_in": 22
+    },
+    {
+     "name": "Toledo",
+     "zip": "43604",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Akron",
+     "zip": "44308",
+     "avg_snowfall_in": 47
+    },
+    {
+     "name": "Dayton",
+     "zip": "45402",
+     "avg_snowfall_in": 25
+    },
+    {
+     "name": "Youngstown",
+     "zip": "44503",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Lima",
+     "zip": "45801",
+     "avg_snowfall_in": 28
+    }
+   ]
+  },
+  {
+   "code": "MO",
+   "name": "Missouri",
+   "url": "https://www.snowdayforecaster.com/states/mo/",
+   "tier": "midwest",
+   "s50": 2.8,
+   "s80": 5.3,
+   "cold": -11,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "St. Louis",
+     "zip": "63101",
+     "avg_snowfall_in": 18
+    },
+    {
+     "name": "Kansas City",
+     "zip": "64106",
+     "avg_snowfall_in": 15
+    },
+    {
+     "name": "Springfield",
+     "zip": "65806",
+     "avg_snowfall_in": 15
+    },
+    {
+     "name": "Columbia",
+     "zip": "65201",
+     "avg_snowfall_in": 17
+    },
+    {
+     "name": "St. Joseph",
+     "zip": "64501",
+     "avg_snowfall_in": 22
+    },
+    {
+     "name": "Joplin",
+     "zip": "64801",
+     "avg_snowfall_in": 10
+    },
+    {
+     "name": "Cape Girardeau",
+     "zip": "63701",
+     "avg_snowfall_in": 8
+    }
+   ]
+  },
+  {
+   "code": "IN",
+   "name": "Indiana",
+   "url": "https://www.snowdayforecaster.com/states/in/",
+   "tier": "midwest",
+   "s50": 2.8,
+   "s80": 5.3,
+   "cold": -11,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Indianapolis",
+     "zip": "46204",
+     "avg_snowfall_in": 26
+    },
+    {
+     "name": "Fort Wayne",
+     "zip": "46802",
+     "avg_snowfall_in": 33
+    },
+    {
+     "name": "South Bend",
+     "zip": "46601",
+     "avg_snowfall_in": 65
+    },
+    {
+     "name": "Evansville",
+     "zip": "47708",
+     "avg_snowfall_in": 12
+    },
+    {
+     "name": "Gary",
+     "zip": "46402",
+     "avg_snowfall_in": 40
+    },
+    {
+     "name": "Lafayette",
+     "zip": "47901",
+     "avg_snowfall_in": 25
+    },
+    {
+     "name": "Bloomington",
+     "zip": "47404",
+     "avg_snowfall_in": 20
+    }
+   ]
+  },
+  {
+   "code": "MD",
+   "name": "Maryland",
+   "url": "https://www.snowdayforecaster.com/states/md/",
+   "tier": "midatlantic",
+   "s50": 3.2,
+   "s80": 4.9,
+   "cold": -20,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Baltimore",
+     "zip": "21202",
+     "avg_snowfall_in": 20
+    },
+    {
+     "name": "Frederick",
+     "zip": "21701",
+     "avg_snowfall_in": 25
+    },
+    {
+     "name": "Hagerstown",
+     "zip": "21740",
+     "avg_snowfall_in": 30
+    },
+    {
+     "name": "Annapolis",
+     "zip": "21401",
+     "avg_snowfall_in": 15
+    },
+    {
+     "name": "Columbia",
+     "zip": "21044",
+     "avg_snowfall_in": 20
+    },
+    {
+     "name": "Salisbury",
+     "zip": "21801",
+     "avg_snowfall_in": 8
+    },
+    {
+     "name": "Cumberland",
+     "zip": "21502",
+     "avg_snowfall_in": 35
+    }
+   ]
+  },
+  {
+   "code": "VA",
+   "name": "Virginia",
+   "url": "https://www.snowdayforecaster.com/states/va/",
+   "tier": "midatlantic",
+   "s50": 3.2,
+   "s80": 4.9,
+   "cold": -20,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Richmond",
+     "zip": "23219",
+     "avg_snowfall_in": 10
+    },
+    {
+     "name": "Arlington",
+     "zip": "22201",
+     "avg_snowfall_in": 14
+    },
+    {
+     "name": "Virginia Beach",
+     "zip": "23451",
+     "avg_snowfall_in": 6
+    },
+    {
+     "name": "Roanoke",
+     "zip": "24011",
+     "avg_snowfall_in": 20
+    },
+    {
+     "name": "Charlottesville",
+     "zip": "22902",
+     "avg_snowfall_in": 15
+    },
+    {
+     "name": "Winchester",
+     "zip": "22601",
+     "avg_snowfall_in": 22
+    },
+    {
+     "name": "Fredericksburg",
+     "zip": "22401",
+     "avg_snowfall_in": 14
+    }
+   ]
+  },
+  {
+   "code": "DC",
+   "name": "Washington, DC",
+   "url": "https://www.snowdayforecaster.com/states/dc/",
+   "tier": "midatlantic",
+   "s50": 3.2,
+   "s80": 4.9,
+   "cold": -20,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Washington (downtown)",
+     "zip": "20004",
+     "avg_snowfall_in": 14
+    },
+    {
+     "name": "Washington (Northwest)",
+     "zip": "20011",
+     "avg_snowfall_in": 14
+    },
+    {
+     "name": "Washington (Southeast)",
+     "zip": "20019",
+     "avg_snowfall_in": 14
+    }
+   ]
+  },
+  {
+   "code": "WV",
+   "name": "West Virginia",
+   "url": "https://www.snowdayforecaster.com/states/wv/",
+   "tier": "midatlantic",
+   "s50": 3.2,
+   "s80": 4.9,
+   "cold": -20,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Charleston",
+     "zip": "25301",
+     "avg_snowfall_in": 30
+    },
+    {
+     "name": "Huntington",
+     "zip": "25701",
+     "avg_snowfall_in": 22
+    },
+    {
+     "name": "Morgantown",
+     "zip": "26505",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Wheeling",
+     "zip": "26003",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Beckley",
+     "zip": "25801",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Parkersburg",
+     "zip": "26101",
+     "avg_snowfall_in": 25
+    },
+    {
+     "name": "Martinsburg",
+     "zip": "25401",
+     "avg_snowfall_in": 25
+    }
+   ]
+  },
+  {
+   "code": "KY",
+   "name": "Kentucky",
+   "url": "https://www.snowdayforecaster.com/states/ky/",
+   "tier": "south_border",
+   "s50": 1.9,
+   "s80": 3.1,
+   "cold": -15,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Louisville",
+     "zip": "40202",
+     "avg_snowfall_in": 12
+    },
+    {
+     "name": "Lexington",
+     "zip": "40507",
+     "avg_snowfall_in": 13
+    },
+    {
+     "name": "Covington",
+     "zip": "41011",
+     "avg_snowfall_in": 20
+    },
+    {
+     "name": "Bowling Green",
+     "zip": "42101",
+     "avg_snowfall_in": 8
+    },
+    {
+     "name": "Owensboro",
+     "zip": "42301",
+     "avg_snowfall_in": 10
+    },
+    {
+     "name": "Paducah",
+     "zip": "42001",
+     "avg_snowfall_in": 8
+    },
+    {
+     "name": "Pikeville",
+     "zip": "41501",
+     "avg_snowfall_in": 20
+    }
+   ]
+  },
+  {
+   "code": "TN",
+   "name": "Tennessee",
+   "url": "https://www.snowdayforecaster.com/states/tn/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Nashville",
+     "zip": "37203",
+     "avg_snowfall_in": 5
+    },
+    {
+     "name": "Memphis",
+     "zip": "38103",
+     "avg_snowfall_in": 3
+    },
+    {
+     "name": "Knoxville",
+     "zip": "37902",
+     "avg_snowfall_in": 6
+    },
+    {
+     "name": "Chattanooga",
+     "zip": "37402",
+     "avg_snowfall_in": 3
+    },
+    {
+     "name": "Johnson City",
+     "zip": "37601",
+     "avg_snowfall_in": 15
+    },
+    {
+     "name": "Clarksville",
+     "zip": "37040",
+     "avg_snowfall_in": 6
+    },
+    {
+     "name": "Murfreesboro",
+     "zip": "37130",
+     "avg_snowfall_in": 5
+    }
+   ]
+  },
+  {
+   "code": "NC",
+   "name": "North Carolina",
+   "url": "https://www.snowdayforecaster.com/states/nc/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Charlotte",
+     "zip": "28202",
+     "avg_snowfall_in": 4
+    },
+    {
+     "name": "Raleigh",
+     "zip": "27601",
+     "avg_snowfall_in": 5
+    },
+    {
+     "name": "Greensboro",
+     "zip": "27401",
+     "avg_snowfall_in": 7
+    },
+    {
+     "name": "Winston-Salem",
+     "zip": "27101",
+     "avg_snowfall_in": 7
+    },
+    {
+     "name": "Asheville",
+     "zip": "28801",
+     "avg_snowfall_in": 10
+    },
+    {
+     "name": "Boone",
+     "zip": "28607",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Durham",
+     "zip": "27701",
+     "avg_snowfall_in": 5
+    }
+   ]
+  },
+  {
+   "code": "GA",
+   "name": "Georgia",
+   "url": "https://www.snowdayforecaster.com/states/ga/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Atlanta",
+     "zip": "30303",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Athens",
+     "zip": "30601",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Augusta",
+     "zip": "30901",
+     "avg_snowfall_in": 1
+    },
+    {
+     "name": "Macon",
+     "zip": "31201",
+     "avg_snowfall_in": 1
+    },
+    {
+     "name": "Rome",
+     "zip": "30161",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Gainesville",
+     "zip": "30501",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Columbus",
+     "zip": "31901",
+     "avg_snowfall_in": 1
+    }
+   ]
+  },
+  {
+   "code": "TX",
+   "name": "Texas",
+   "url": "https://www.snowdayforecaster.com/states/tx/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": true,
+   "cities": [
+    {
+     "name": "Dallas",
+     "zip": "75201",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Fort Worth",
+     "zip": "76102",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Amarillo",
+     "zip": "79101",
+     "avg_snowfall_in": 17
+    },
+    {
+     "name": "Lubbock",
+     "zip": "79401",
+     "avg_snowfall_in": 9
+    },
+    {
+     "name": "Austin",
+     "zip": "78701",
+     "avg_snowfall_in": 1
+    },
+    {
+     "name": "El Paso",
+     "zip": "79901",
+     "avg_snowfall_in": 4
+    },
+    {
+     "name": "Houston",
+     "zip": "77002",
+     "avg_snowfall_in": 0
+    }
+   ]
+  },
+  {
+   "code": "NH",
+   "name": "New Hampshire",
+   "url": "https://www.snowdayforecaster.com/states/nh/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Manchester",
+     "zip": "03101",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Nashua",
+     "zip": "03060",
+     "avg_snowfall_in": 55
+    },
+    {
+     "name": "Concord",
+     "zip": "03301",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Portsmouth",
+     "zip": "03801",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Keene",
+     "zip": "03431",
+     "avg_snowfall_in": 65
+    },
+    {
+     "name": "Berlin",
+     "zip": "03570",
+     "avg_snowfall_in": 90
+    },
+    {
+     "name": "Dover",
+     "zip": "03820",
+     "avg_snowfall_in": 55
+    }
+   ]
+  },
+  {
+   "code": "VT",
+   "name": "Vermont",
+   "url": "https://www.snowdayforecaster.com/states/vt/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Burlington",
+     "zip": "05401",
+     "avg_snowfall_in": 80
+    },
+    {
+     "name": "Montpelier",
+     "zip": "05602",
+     "avg_snowfall_in": 85
+    },
+    {
+     "name": "Rutland",
+     "zip": "05701",
+     "avg_snowfall_in": 70
+    },
+    {
+     "name": "Brattleboro",
+     "zip": "05301",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "St. Johnsbury",
+     "zip": "05819",
+     "avg_snowfall_in": 85
+    },
+    {
+     "name": "Bennington",
+     "zip": "05201",
+     "avg_snowfall_in": 65
+    }
+   ]
+  },
+  {
+   "code": "ME",
+   "name": "Maine",
+   "url": "https://www.snowdayforecaster.com/states/me/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Portland",
+     "zip": "04101",
+     "avg_snowfall_in": 65
+    },
+    {
+     "name": "Lewiston",
+     "zip": "04240",
+     "avg_snowfall_in": 70
+    },
+    {
+     "name": "Bangor",
+     "zip": "04401",
+     "avg_snowfall_in": 65
+    },
+    {
+     "name": "Augusta",
+     "zip": "04330",
+     "avg_snowfall_in": 70
+    },
+    {
+     "name": "Presque Isle",
+     "zip": "04769",
+     "avg_snowfall_in": 100
+    },
+    {
+     "name": "Caribou",
+     "zip": "04736",
+     "avg_snowfall_in": 110
+    },
+    {
+     "name": "Brunswick",
+     "zip": "04011",
+     "avg_snowfall_in": 65
+    }
+   ]
+  },
+  {
+   "code": "IA",
+   "name": "Iowa",
+   "url": "https://www.snowdayforecaster.com/states/ia/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Des Moines",
+     "zip": "50309",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Cedar Rapids",
+     "zip": "52401",
+     "avg_snowfall_in": 32
+    },
+    {
+     "name": "Davenport",
+     "zip": "52801",
+     "avg_snowfall_in": 30
+    },
+    {
+     "name": "Sioux City",
+     "zip": "51101",
+     "avg_snowfall_in": 32
+    },
+    {
+     "name": "Iowa City",
+     "zip": "52240",
+     "avg_snowfall_in": 28
+    },
+    {
+     "name": "Waterloo",
+     "zip": "50701",
+     "avg_snowfall_in": 33
+    },
+    {
+     "name": "Dubuque",
+     "zip": "52001",
+     "avg_snowfall_in": 38
+    }
+   ]
+  },
+  {
+   "code": "NE",
+   "name": "Nebraska",
+   "url": "https://www.snowdayforecaster.com/states/ne/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Omaha",
+     "zip": "68102",
+     "avg_snowfall_in": 27
+    },
+    {
+     "name": "Lincoln",
+     "zip": "68508",
+     "avg_snowfall_in": 26
+    },
+    {
+     "name": "Grand Island",
+     "zip": "68801",
+     "avg_snowfall_in": 28
+    },
+    {
+     "name": "Kearney",
+     "zip": "68845",
+     "avg_snowfall_in": 28
+    },
+    {
+     "name": "North Platte",
+     "zip": "69101",
+     "avg_snowfall_in": 30
+    },
+    {
+     "name": "Scottsbluff",
+     "zip": "69361",
+     "avg_snowfall_in": 40
+    },
+    {
+     "name": "Norfolk",
+     "zip": "68701",
+     "avg_snowfall_in": 30
+    }
+   ]
+  },
+  {
+   "code": "KS",
+   "name": "Kansas",
+   "url": "https://www.snowdayforecaster.com/states/ks/",
+   "tier": "midwest",
+   "s50": 2.8,
+   "s80": 5.3,
+   "cold": -11,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Wichita",
+     "zip": "67202",
+     "avg_snowfall_in": 13
+    },
+    {
+     "name": "Overland Park",
+     "zip": "66204",
+     "avg_snowfall_in": 15
+    },
+    {
+     "name": "Topeka",
+     "zip": "66603",
+     "avg_snowfall_in": 17
+    },
+    {
+     "name": "Lawrence",
+     "zip": "66044",
+     "avg_snowfall_in": 16
+    },
+    {
+     "name": "Salina",
+     "zip": "67401",
+     "avg_snowfall_in": 15
+    },
+    {
+     "name": "Garden City",
+     "zip": "67846",
+     "avg_snowfall_in": 18
+    },
+    {
+     "name": "Manhattan",
+     "zip": "66502",
+     "avg_snowfall_in": 17
+    }
+   ]
+  },
+  {
+   "code": "SD",
+   "name": "South Dakota",
+   "url": "https://www.snowdayforecaster.com/states/sd/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Sioux Falls",
+     "zip": "57104",
+     "avg_snowfall_in": 40
+    },
+    {
+     "name": "Rapid City",
+     "zip": "57701",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Aberdeen",
+     "zip": "57401",
+     "avg_snowfall_in": 38
+    },
+    {
+     "name": "Pierre",
+     "zip": "57501",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Brookings",
+     "zip": "57006",
+     "avg_snowfall_in": 40
+    },
+    {
+     "name": "Watertown",
+     "zip": "57201",
+     "avg_snowfall_in": 38
+    }
+   ]
+  },
+  {
+   "code": "ND",
+   "name": "North Dakota",
+   "url": "https://www.snowdayforecaster.com/states/nd/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Fargo",
+     "zip": "58102",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Bismarck",
+     "zip": "58501",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Grand Forks",
+     "zip": "58201",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Minot",
+     "zip": "58701",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Williston",
+     "zip": "58801",
+     "avg_snowfall_in": 40
+    },
+    {
+     "name": "Dickinson",
+     "zip": "58601",
+     "avg_snowfall_in": 40
+    }
+   ]
+  },
+  {
+   "code": "MT",
+   "name": "Montana",
+   "url": "https://www.snowdayforecaster.com/states/mt/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Billings",
+     "zip": "59101",
+     "avg_snowfall_in": 55
+    },
+    {
+     "name": "Missoula",
+     "zip": "59801",
+     "avg_snowfall_in": 40
+    },
+    {
+     "name": "Great Falls",
+     "zip": "59401",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Bozeman",
+     "zip": "59715",
+     "avg_snowfall_in": 70
+    },
+    {
+     "name": "Helena",
+     "zip": "59601",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Butte",
+     "zip": "59701",
+     "avg_snowfall_in": 55
+    },
+    {
+     "name": "Kalispell",
+     "zip": "59901",
+     "avg_snowfall_in": 60
+    }
+   ]
+  },
+  {
+   "code": "ID",
+   "name": "Idaho",
+   "url": "https://www.snowdayforecaster.com/states/id/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Boise",
+     "zip": "83702",
+     "avg_snowfall_in": 18
+    },
+    {
+     "name": "Idaho Falls",
+     "zip": "83402",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Pocatello",
+     "zip": "83201",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Coeur d'Alene",
+     "zip": "83814",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Twin Falls",
+     "zip": "83301",
+     "avg_snowfall_in": 15
+    },
+    {
+     "name": "Lewiston",
+     "zip": "83501",
+     "avg_snowfall_in": 15
+    },
+    {
+     "name": "Nampa",
+     "zip": "83651",
+     "avg_snowfall_in": 18
+    }
+   ]
+  },
+  {
+   "code": "UT",
+   "name": "Utah",
+   "url": "https://www.snowdayforecaster.com/states/ut/",
+   "tier": "north",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Salt Lake City",
+     "zip": "84111",
+     "avg_snowfall_in": 56
+    },
+    {
+     "name": "Provo",
+     "zip": "84601",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Ogden",
+     "zip": "84401",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Logan",
+     "zip": "84321",
+     "avg_snowfall_in": 55
+    },
+    {
+     "name": "Park City",
+     "zip": "84060",
+     "avg_snowfall_in": 150
+    },
+    {
+     "name": "St. George",
+     "zip": "84770",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Cedar City",
+     "zip": "84720",
+     "avg_snowfall_in": 45
+    }
+   ]
+  },
+  {
+   "code": "WA",
+   "name": "Washington",
+   "url": "https://www.snowdayforecaster.com/states/wa/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Seattle",
+     "zip": "98101",
+     "avg_snowfall_in": 6
+    },
+    {
+     "name": "Spokane",
+     "zip": "99201",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Tacoma",
+     "zip": "98402",
+     "avg_snowfall_in": 6
+    },
+    {
+     "name": "Bellingham",
+     "zip": "98225",
+     "avg_snowfall_in": 10
+    },
+    {
+     "name": "Yakima",
+     "zip": "98901",
+     "avg_snowfall_in": 22
+    },
+    {
+     "name": "Wenatchee",
+     "zip": "98801",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Vancouver",
+     "zip": "98660",
+     "avg_snowfall_in": 5
+    }
+   ]
+  },
+  {
+   "code": "OR",
+   "name": "Oregon",
+   "url": "https://www.snowdayforecaster.com/states/or/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Portland",
+     "zip": "97204",
+     "avg_snowfall_in": 4
+    },
+    {
+     "name": "Salem",
+     "zip": "97301",
+     "avg_snowfall_in": 5
+    },
+    {
+     "name": "Eugene",
+     "zip": "97401",
+     "avg_snowfall_in": 5
+    },
+    {
+     "name": "Bend",
+     "zip": "97701",
+     "avg_snowfall_in": 25
+    },
+    {
+     "name": "Medford",
+     "zip": "97501",
+     "avg_snowfall_in": 5
+    },
+    {
+     "name": "Klamath Falls",
+     "zip": "97601",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Hillsboro",
+     "zip": "97123",
+     "avg_snowfall_in": 4
+    }
+   ]
+  },
+  {
+   "code": "OK",
+   "name": "Oklahoma",
+   "url": "https://www.snowdayforecaster.com/states/ok/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Oklahoma City",
+     "zip": "73102",
+     "avg_snowfall_in": 7
+    },
+    {
+     "name": "Tulsa",
+     "zip": "74103",
+     "avg_snowfall_in": 10
+    },
+    {
+     "name": "Norman",
+     "zip": "73069",
+     "avg_snowfall_in": 7
+    },
+    {
+     "name": "Lawton",
+     "zip": "73501",
+     "avg_snowfall_in": 5
+    },
+    {
+     "name": "Enid",
+     "zip": "73701",
+     "avg_snowfall_in": 10
+    },
+    {
+     "name": "Stillwater",
+     "zip": "74074",
+     "avg_snowfall_in": 8
+    },
+    {
+     "name": "Broken Arrow",
+     "zip": "74012",
+     "avg_snowfall_in": 10
+    }
+   ]
+  },
+  {
+   "code": "AR",
+   "name": "Arkansas",
+   "url": "https://www.snowdayforecaster.com/states/ar/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Little Rock",
+     "zip": "72201",
+     "avg_snowfall_in": 4
+    },
+    {
+     "name": "Fayetteville",
+     "zip": "72701",
+     "avg_snowfall_in": 7
+    },
+    {
+     "name": "Fort Smith",
+     "zip": "72901",
+     "avg_snowfall_in": 5
+    },
+    {
+     "name": "Jonesboro",
+     "zip": "72401",
+     "avg_snowfall_in": 6
+    },
+    {
+     "name": "Hot Springs",
+     "zip": "71901",
+     "avg_snowfall_in": 4
+    },
+    {
+     "name": "Harrison",
+     "zip": "72601",
+     "avg_snowfall_in": 10
+    },
+    {
+     "name": "Conway",
+     "zip": "72032",
+     "avg_snowfall_in": 4
+    }
+   ]
+  },
+  {
+   "code": "DE",
+   "name": "Delaware",
+   "url": "https://www.snowdayforecaster.com/states/de/",
+   "tier": "midatlantic",
+   "s50": 3.2,
+   "s80": 4.9,
+   "cold": -20,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Wilmington",
+     "zip": "19801",
+     "avg_snowfall_in": 20
+    },
+    {
+     "name": "Newark",
+     "zip": "19711",
+     "avg_snowfall_in": 18
+    },
+    {
+     "name": "Middletown",
+     "zip": "19709",
+     "avg_snowfall_in": 16
+    },
+    {
+     "name": "Dover",
+     "zip": "19901",
+     "avg_snowfall_in": 13
+    },
+    {
+     "name": "Rehoboth Beach",
+     "zip": "19971",
+     "avg_snowfall_in": 8
+    },
+    {
+     "name": "Seaford",
+     "zip": "19973",
+     "avg_snowfall_in": 8
+    }
+   ]
+  },
+  {
+   "code": "NM",
+   "name": "New Mexico",
+   "url": "https://www.snowdayforecaster.com/states/nm/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Albuquerque",
+     "zip": "87102",
+     "avg_snowfall_in": 9
+    },
+    {
+     "name": "Santa Fe",
+     "zip": "87501",
+     "avg_snowfall_in": 30
+    },
+    {
+     "name": "Las Cruces",
+     "zip": "88001",
+     "avg_snowfall_in": 3
+    },
+    {
+     "name": "Farmington",
+     "zip": "87401",
+     "avg_snowfall_in": 10
+    },
+    {
+     "name": "Roswell",
+     "zip": "88201",
+     "avg_snowfall_in": 6
+    },
+    {
+     "name": "Taos",
+     "zip": "87571",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Rio Rancho",
+     "zip": "87124",
+     "avg_snowfall_in": 9
+    }
+   ]
+  },
+  {
+   "code": "SC",
+   "name": "South Carolina",
+   "url": "https://www.snowdayforecaster.com/states/sc/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Columbia",
+     "zip": "29201",
+     "avg_snowfall_in": 1
+    },
+    {
+     "name": "Greenville",
+     "zip": "29601",
+     "avg_snowfall_in": 4
+    },
+    {
+     "name": "Charleston",
+     "zip": "29401",
+     "avg_snowfall_in": 0
+    },
+    {
+     "name": "Spartanburg",
+     "zip": "29301",
+     "avg_snowfall_in": 4
+    },
+    {
+     "name": "Rock Hill",
+     "zip": "29730",
+     "avg_snowfall_in": 3
+    },
+    {
+     "name": "Myrtle Beach",
+     "zip": "29577",
+     "avg_snowfall_in": 0
+    }
+   ]
+  },
+  {
+   "code": "AL",
+   "name": "Alabama",
+   "url": "https://www.snowdayforecaster.com/states/al/",
+   "tier": "south",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "tracked": false,
+   "cities": [
+    {
+     "name": "Birmingham",
+     "zip": "35203",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Huntsville",
+     "zip": "35801",
+     "avg_snowfall_in": 3
+    },
+    {
+     "name": "Montgomery",
+     "zip": "36104",
+     "avg_snowfall_in": 0
+    },
+    {
+     "name": "Tuscaloosa",
+     "zip": "35401",
+     "avg_snowfall_in": 1
+    },
+    {
+     "name": "Mobile",
+     "zip": "36602",
+     "avg_snowfall_in": 0
+    },
+    {
+     "name": "Florence",
+     "zip": "35630",
+     "avg_snowfall_in": 3
+    }
+   ]
+  }
+ ]
+}

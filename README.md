@@ -50,6 +50,14 @@ each page opens with an answer block, and `LINKS` defines the internal linking.
   block, plus page-specific `FAQPage`, `HowTo`, `Dataset`, `DefinedTermSet`, `ItemList`,
   `BreadcrumbList` and `Organization` as appropriate.
 
+## State pages
+
+`build-states/build_states.py` regenerates every `/states/<xx>/` page, the `/states/` hub, `api/states.json`
+and the state entries in `sitemap.xml` from `build-states/states_data.py` (cities by ZIP, NOAA snowfall
+normals, largest districts, closing-announcement outlets, make-up-day rules). Each state page carries a
+live board (`assets/stateboard.js`) that runs the published model for its major cities. Edit the data file,
+run the script from the repo root, commit.
+
 ## Deploying an update
 
 ```

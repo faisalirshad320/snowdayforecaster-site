@@ -47,29 +47,48 @@ used. The closure dataset is offered under CC BY 4.0.
 - [Snow day chances by state](https://www.snowdayforecaster.com/states/)
 - [2025-26 closure data](https://www.snowdayforecaster.com/2025-26-closures/)
 - [Methodology and accuracy](https://www.snowdayforecaster.com/methodology/)
-- [Snow day chances in Michigan](https://www.snowdayforecaster.com/states/mi/)
-- [Snow day chances in Minnesota](https://www.snowdayforecaster.com/states/mn/)
-- [Snow day chances in Wisconsin](https://www.snowdayforecaster.com/states/wi/)
-- [Snow day chances in Illinois](https://www.snowdayforecaster.com/states/il/)
-- [Snow day chances in Colorado](https://www.snowdayforecaster.com/states/co/)
-- [Snow day chances in New York](https://www.snowdayforecaster.com/states/ny/)
-- [Snow day chances in Massachusetts](https://www.snowdayforecaster.com/states/ma/)
-- [Snow day chances in Pennsylvania](https://www.snowdayforecaster.com/states/pa/)
-- [Snow day chances in Connecticut](https://www.snowdayforecaster.com/states/ct/)
-- [Snow day chances in Rhode Island](https://www.snowdayforecaster.com/states/ri/)
-- [Snow day chances in New Jersey](https://www.snowdayforecaster.com/states/nj/)
-- [Snow day chances in Ohio](https://www.snowdayforecaster.com/states/oh/)
-- [Snow day chances in Missouri](https://www.snowdayforecaster.com/states/mo/)
-- [Snow day chances in Indiana](https://www.snowdayforecaster.com/states/in/)
-- [Snow day chances in Maryland](https://www.snowdayforecaster.com/states/md/)
-- [Snow day chances in Virginia](https://www.snowdayforecaster.com/states/va/)
-- [Snow day chances in Washington, DC](https://www.snowdayforecaster.com/states/dc/)
-- [Snow day chances in West Virginia](https://www.snowdayforecaster.com/states/wv/)
-- [Snow day chances in Kentucky](https://www.snowdayforecaster.com/states/ky/)
-- [Snow day chances in Tennessee](https://www.snowdayforecaster.com/states/tn/)
-- [Snow day chances in North Carolina](https://www.snowdayforecaster.com/states/nc/)
-- [Snow day chances in Georgia](https://www.snowdayforecaster.com/states/ga/)
-- [Snow day chances in Texas](https://www.snowdayforecaster.com/states/tx/)
+- [Snow day chances in Colorado](https://www.snowdayforecaster.com/states/co/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Idaho](https://www.snowdayforecaster.com/states/id/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Illinois](https://www.snowdayforecaster.com/states/il/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Iowa](https://www.snowdayforecaster.com/states/ia/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Maine](https://www.snowdayforecaster.com/states/me/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Michigan](https://www.snowdayforecaster.com/states/mi/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 8 cities.
+- [Snow day chances in Minnesota](https://www.snowdayforecaster.com/states/mn/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Montana](https://www.snowdayforecaster.com/states/mt/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Nebraska](https://www.snowdayforecaster.com/states/ne/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in New Hampshire](https://www.snowdayforecaster.com/states/nh/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in North Dakota](https://www.snowdayforecaster.com/states/nd/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 6 cities.
+- [Snow day chances in South Dakota](https://www.snowdayforecaster.com/states/sd/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 6 cities.
+- [Snow day chances in Utah](https://www.snowdayforecaster.com/states/ut/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Vermont](https://www.snowdayforecaster.com/states/vt/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 6 cities.
+- [Snow day chances in Wisconsin](https://www.snowdayforecaster.com/states/wi/): 6.2 in for a 50% chance, Northern snow belt region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Connecticut](https://www.snowdayforecaster.com/states/ct/): 5.2 in for a 50% chance, Northeast region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Massachusetts](https://www.snowdayforecaster.com/states/ma/): 5.2 in for a 50% chance, Northeast region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in New Jersey](https://www.snowdayforecaster.com/states/nj/): 5.2 in for a 50% chance, Northeast region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in New York](https://www.snowdayforecaster.com/states/ny/): 5.2 in for a 50% chance, Northeast region; live board of tomorrow's chances for 8 cities.
+- [Snow day chances in Pennsylvania](https://www.snowdayforecaster.com/states/pa/): 5.2 in for a 50% chance, Northeast region; live board of tomorrow's chances for 8 cities.
+- [Snow day chances in Rhode Island](https://www.snowdayforecaster.com/states/ri/): 5.2 in for a 50% chance, Northeast region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Indiana](https://www.snowdayforecaster.com/states/in/): 2.8 in for a 50% chance, Midwest region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Kansas](https://www.snowdayforecaster.com/states/ks/): 2.8 in for a 50% chance, Midwest region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Missouri](https://www.snowdayforecaster.com/states/mo/): 2.8 in for a 50% chance, Midwest region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Ohio](https://www.snowdayforecaster.com/states/oh/): 2.8 in for a 50% chance, Midwest region; live board of tomorrow's chances for 8 cities.
+- [Snow day chances in Delaware](https://www.snowdayforecaster.com/states/de/): 3.2 in for a 50% chance, Mid-Atlantic region; live board of tomorrow's chances for 6 cities.
+- [Snow day chances in Maryland](https://www.snowdayforecaster.com/states/md/): 3.2 in for a 50% chance, Mid-Atlantic region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Virginia](https://www.snowdayforecaster.com/states/va/): 3.2 in for a 50% chance, Mid-Atlantic region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Washington, DC](https://www.snowdayforecaster.com/states/dc/): 3.2 in for a 50% chance, Mid-Atlantic region; live board of tomorrow's chances for 3 cities.
+- [Snow day chances in West Virginia](https://www.snowdayforecaster.com/states/wv/): 3.2 in for a 50% chance, Mid-Atlantic region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Kentucky](https://www.snowdayforecaster.com/states/ky/): 1.9 in for a 50% chance, Border South region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Alabama](https://www.snowdayforecaster.com/states/al/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 6 cities.
+- [Snow day chances in Arkansas](https://www.snowdayforecaster.com/states/ar/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Georgia](https://www.snowdayforecaster.com/states/ga/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in New Mexico](https://www.snowdayforecaster.com/states/nm/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in North Carolina](https://www.snowdayforecaster.com/states/nc/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Oklahoma](https://www.snowdayforecaster.com/states/ok/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Oregon](https://www.snowdayforecaster.com/states/or/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in South Carolina](https://www.snowdayforecaster.com/states/sc/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 6 cities.
+- [Snow day chances in Tennessee](https://www.snowdayforecaster.com/states/tn/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Texas](https://www.snowdayforecaster.com/states/tx/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 7 cities.
+- [Snow day chances in Washington](https://www.snowdayforecaster.com/states/wa/): 1 in for a 50% chance, South region; live board of tomorrow's chances for 7 cities.
 - [Machine-readable summary](https://www.snowdayforecaster.com/api/summary.json): the figures above as JSON.
 - [Model coefficients](https://www.snowdayforecaster.com/assets/coefficients.json): all 23 weights and the intercept.
 
@@ -98,6 +117,11 @@ used. The closure dataset is offered under CC BY 4.0.
 - [Snow day chances in North Carolina](https://www.snowdayforecaster.com/states/nc/): 1.0 in for a 50% chance, South region.
 - [Snow day chances in Georgia](https://www.snowdayforecaster.com/states/ga/): 1.0 in for a 50% chance, South region.
 - [Snow day chances in Texas](https://www.snowdayforecaster.com/states/tx/): 1.0 in for a 50% chance, South region.
+
+## Machine-readable
+
+- https://www.snowdayforecaster.com/api/summary.json — model, back-test and headline figures
+- https://www.snowdayforecaster.com/api/states.json — per-state thresholds and the cities on each live board (CC BY 4.0)
 
 ## Source data
 
