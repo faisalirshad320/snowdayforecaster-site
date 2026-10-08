@@ -1,0 +1,472 @@
+{
+ "name": "Snow Day Forecaster — metro thresholds",
+ "url": "https://www.snowdayforecaster.com/cities/",
+ "updated": "2026-10-09",
+ "license": "CC BY 4.0",
+ "attribution": "Snow Day Forecaster (https://www.snowdayforecaster.com)",
+ "note": "New snow (inches, plain overnight snowfall) needed for a 50% / 80% chance a school district closes; cold-only threshold is wind chill °F. Metro figures inherit the state regional model; see /methodology/.",
+ "cities": [
+  {
+   "slug": "nyc",
+   "name": "New York City",
+   "state": "NY",
+   "url": "https://www.snowdayforecaster.com/cities/nyc/",
+   "kw": "snow day nyc",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "places": [
+    {
+     "name": "New York City",
+     "zip": "10007",
+     "avg_snowfall_in": 29
+    },
+    {
+     "name": "Brooklyn",
+     "zip": "11201",
+     "avg_snowfall_in": 28
+    },
+    {
+     "name": "Queens",
+     "zip": "11432",
+     "avg_snowfall_in": 29
+    },
+    {
+     "name": "Bronx",
+     "zip": "10451",
+     "avg_snowfall_in": 30
+    },
+    {
+     "name": "Yonkers",
+     "zip": "10701",
+     "avg_snowfall_in": 30
+    },
+    {
+     "name": "White Plains",
+     "zip": "10601",
+     "avg_snowfall_in": 32
+    }
+   ]
+  },
+  {
+   "slug": "buffalo",
+   "name": "Buffalo",
+   "state": "NY",
+   "url": "https://www.snowdayforecaster.com/cities/buffalo/",
+   "kw": "snow day buffalo",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "places": [
+    {
+     "name": "Buffalo",
+     "zip": "14202",
+     "avg_snowfall_in": 95
+    },
+    {
+     "name": "Cheektowaga",
+     "zip": "14225",
+     "avg_snowfall_in": 95
+    },
+    {
+     "name": "Amherst",
+     "zip": "14226",
+     "avg_snowfall_in": 100
+    },
+    {
+     "name": "Tonawanda",
+     "zip": "14150",
+     "avg_snowfall_in": 95
+    },
+    {
+     "name": "West Seneca",
+     "zip": "14224",
+     "avg_snowfall_in": 95
+    },
+    {
+     "name": "Lancaster",
+     "zip": "14086",
+     "avg_snowfall_in": 95
+    }
+   ]
+  },
+  {
+   "slug": "rochester",
+   "name": "Rochester",
+   "state": "NY",
+   "url": "https://www.snowdayforecaster.com/cities/rochester/",
+   "kw": "snow day rochester ny",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "places": [
+    {
+     "name": "Rochester",
+     "zip": "14604",
+     "avg_snowfall_in": 100
+    },
+    {
+     "name": "Greece",
+     "zip": "14616",
+     "avg_snowfall_in": 100
+    },
+    {
+     "name": "Irondequoit",
+     "zip": "14617",
+     "avg_snowfall_in": 100
+    },
+    {
+     "name": "Henrietta",
+     "zip": "14467",
+     "avg_snowfall_in": 95
+    },
+    {
+     "name": "Webster",
+     "zip": "14580",
+     "avg_snowfall_in": 100
+    },
+    {
+     "name": "Brighton",
+     "zip": "14618",
+     "avg_snowfall_in": 100
+    }
+   ]
+  },
+  {
+   "slug": "syracuse",
+   "name": "Syracuse",
+   "state": "NY",
+   "url": "https://www.snowdayforecaster.com/cities/syracuse/",
+   "kw": "snow day syracuse",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "places": [
+    {
+     "name": "Syracuse",
+     "zip": "13202",
+     "avg_snowfall_in": 125
+    },
+    {
+     "name": "Cicero",
+     "zip": "13039",
+     "avg_snowfall_in": 120
+    },
+    {
+     "name": "Camillus",
+     "zip": "13031",
+     "avg_snowfall_in": 120
+    },
+    {
+     "name": "Liverpool",
+     "zip": "13088",
+     "avg_snowfall_in": 123
+    },
+    {
+     "name": "Baldwinsville",
+     "zip": "13027",
+     "avg_snowfall_in": 120
+    },
+    {
+     "name": "East Syracuse",
+     "zip": "13057",
+     "avg_snowfall_in": 123
+    }
+   ]
+  },
+  {
+   "slug": "denver",
+   "name": "Denver",
+   "state": "CO",
+   "url": "https://www.snowdayforecaster.com/cities/denver/",
+   "kw": "snow day denver",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "places": [
+    {
+     "name": "Denver",
+     "zip": "80202",
+     "avg_snowfall_in": 57
+    },
+    {
+     "name": "Aurora",
+     "zip": "80010",
+     "avg_snowfall_in": 55
+    },
+    {
+     "name": "Boulder",
+     "zip": "80302",
+     "avg_snowfall_in": 85
+    },
+    {
+     "name": "Lakewood",
+     "zip": "80215",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Littleton",
+     "zip": "80120",
+     "avg_snowfall_in": 55
+    },
+    {
+     "name": "Arvada",
+     "zip": "80002",
+     "avg_snowfall_in": 58
+    }
+   ]
+  },
+  {
+   "slug": "chicago",
+   "name": "Chicago",
+   "state": "IL",
+   "url": "https://www.snowdayforecaster.com/cities/chicago/",
+   "kw": "snow day chicago",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "places": [
+    {
+     "name": "Chicago",
+     "zip": "60601",
+     "avg_snowfall_in": 38
+    },
+    {
+     "name": "Naperville",
+     "zip": "60540",
+     "avg_snowfall_in": 37
+    },
+    {
+     "name": "Evanston",
+     "zip": "60201",
+     "avg_snowfall_in": 38
+    },
+    {
+     "name": "Schaumburg",
+     "zip": "60173",
+     "avg_snowfall_in": 37
+    },
+    {
+     "name": "Oak Lawn",
+     "zip": "60453",
+     "avg_snowfall_in": 38
+    },
+    {
+     "name": "Joliet",
+     "zip": "60432",
+     "avg_snowfall_in": 33
+    }
+   ]
+  },
+  {
+   "slug": "detroit",
+   "name": "Detroit",
+   "state": "MI",
+   "url": "https://www.snowdayforecaster.com/cities/detroit/",
+   "kw": "snow day detroit",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "places": [
+    {
+     "name": "Detroit",
+     "zip": "48226",
+     "avg_snowfall_in": 33
+    },
+    {
+     "name": "Warren",
+     "zip": "48089",
+     "avg_snowfall_in": 34
+    },
+    {
+     "name": "Dearborn",
+     "zip": "48124",
+     "avg_snowfall_in": 33
+    },
+    {
+     "name": "Livonia",
+     "zip": "48150",
+     "avg_snowfall_in": 36
+    },
+    {
+     "name": "Sterling Heights",
+     "zip": "48310",
+     "avg_snowfall_in": 35
+    },
+    {
+     "name": "Troy",
+     "zip": "48083",
+     "avg_snowfall_in": 36
+    }
+   ]
+  },
+  {
+   "slug": "grand-rapids",
+   "name": "Grand Rapids",
+   "state": "MI",
+   "url": "https://www.snowdayforecaster.com/cities/grand-rapids/",
+   "kw": "snow day grand rapids",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "places": [
+    {
+     "name": "Grand Rapids",
+     "zip": "49503",
+     "avg_snowfall_in": 75
+    },
+    {
+     "name": "Wyoming",
+     "zip": "49509",
+     "avg_snowfall_in": 72
+    },
+    {
+     "name": "Kentwood",
+     "zip": "49508",
+     "avg_snowfall_in": 72
+    },
+    {
+     "name": "Walker",
+     "zip": "49534",
+     "avg_snowfall_in": 74
+    },
+    {
+     "name": "Grandville",
+     "zip": "49418",
+     "avg_snowfall_in": 72
+    },
+    {
+     "name": "East Grand Rapids",
+     "zip": "49506",
+     "avg_snowfall_in": 75
+    }
+   ]
+  },
+  {
+   "slug": "cleveland",
+   "name": "Cleveland",
+   "state": "OH",
+   "url": "https://www.snowdayforecaster.com/cities/cleveland/",
+   "kw": "snow day cleveland",
+   "s50": 2.8,
+   "s80": 5.3,
+   "cold": -11,
+   "places": [
+    {
+     "name": "Cleveland",
+     "zip": "44114",
+     "avg_snowfall_in": 64
+    },
+    {
+     "name": "Parma",
+     "zip": "44129",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Lakewood",
+     "zip": "44107",
+     "avg_snowfall_in": 62
+    },
+    {
+     "name": "Euclid",
+     "zip": "44117",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Cleveland Heights",
+     "zip": "44118",
+     "avg_snowfall_in": 62
+    },
+    {
+     "name": "Strongsville",
+     "zip": "44136",
+     "avg_snowfall_in": 60
+    }
+   ]
+  },
+  {
+   "slug": "boston",
+   "name": "Boston",
+   "state": "MA",
+   "url": "https://www.snowdayforecaster.com/cities/boston/",
+   "kw": "snow day boston",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "places": [
+    {
+     "name": "Boston",
+     "zip": "02108",
+     "avg_snowfall_in": 49
+    },
+    {
+     "name": "Cambridge",
+     "zip": "02139",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Quincy",
+     "zip": "02169",
+     "avg_snowfall_in": 45
+    },
+    {
+     "name": "Newton",
+     "zip": "02458",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Somerville",
+     "zip": "02143",
+     "avg_snowfall_in": 49
+    },
+    {
+     "name": "Brookline",
+     "zip": "02445",
+     "avg_snowfall_in": 49
+    }
+   ]
+  },
+  {
+   "slug": "dallas",
+   "name": "Dallas",
+   "state": "TX",
+   "url": "https://www.snowdayforecaster.com/cities/dallas/",
+   "kw": "snow day dallas",
+   "s50": 1.0,
+   "s80": 1.5,
+   "cold": -15,
+   "places": [
+    {
+     "name": "Dallas",
+     "zip": "75201",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Fort Worth",
+     "zip": "76102",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Plano",
+     "zip": "75074",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Irving",
+     "zip": "75060",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Arlington",
+     "zip": "76010",
+     "avg_snowfall_in": 2
+    },
+    {
+     "name": "Garland",
+     "zip": "75040",
+     "avg_snowfall_in": 2
+    }
+   ]
+  }
+ ]
+}

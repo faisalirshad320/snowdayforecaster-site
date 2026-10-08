@@ -1,7 +1,7 @@
 {
  "name": "Snow Day Forecaster — state thresholds",
  "url": "https://www.snowdayforecaster.com/states/",
- "updated": "2026-10-08",
+ "updated": "2026-10-09",
  "license": "CC BY 4.0",
  "attribution": "Snow Day Forecaster (https://www.snowdayforecaster.com)",
  "note": "New snow (inches, plain overnight snowfall, no ice, no existing pack) needed for a 50% / 80% chance that a school district closes; cold-only threshold is wind chill °F. Regional model; see /methodology/.",
@@ -52,7 +52,7 @@
    "s50": 6.2,
    "s80": 11.1,
    "cold": -35,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Detroit",
@@ -104,7 +104,7 @@
    "s50": 6.2,
    "s80": 11.1,
    "cold": -35,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Minneapolis",
@@ -151,7 +151,7 @@
    "s50": 6.2,
    "s80": 11.1,
    "cold": -35,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Milwaukee",
@@ -198,7 +198,7 @@
    "s50": 6.2,
    "s80": 11.1,
    "cold": -35,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Chicago",
@@ -245,7 +245,7 @@
    "s50": 6.2,
    "s80": 11.1,
    "cold": -35,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Denver",
@@ -292,7 +292,7 @@
    "s50": 5.2,
    "s80": 9.0,
    "cold": -16,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "New York City",
@@ -344,7 +344,7 @@
    "s50": 5.2,
    "s80": 9.0,
    "cold": -16,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Boston",
@@ -391,7 +391,7 @@
    "s50": 5.2,
    "s80": 9.0,
    "cold": -16,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Philadelphia",
@@ -584,7 +584,7 @@
    "s50": 2.8,
    "s80": 5.3,
    "cold": -11,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Columbus",
@@ -636,7 +636,7 @@
    "s50": 2.8,
    "s80": 5.3,
    "cold": -11,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "St. Louis",
@@ -730,7 +730,7 @@
    "s50": 3.2,
    "s80": 4.9,
    "cold": -20,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Baltimore",
@@ -777,7 +777,7 @@
    "s50": 3.2,
    "s80": 4.9,
    "cold": -20,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Richmond",
@@ -824,7 +824,7 @@
    "s50": 3.2,
    "s80": 4.9,
    "cold": -20,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Washington (downtown)",
@@ -898,7 +898,7 @@
    "s50": 1.9,
    "s80": 3.1,
    "cold": -15,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Louisville",
@@ -945,7 +945,7 @@
    "s50": 1.0,
    "s80": 1.5,
    "cold": -15,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Nashville",
@@ -992,7 +992,7 @@
    "s50": 1.0,
    "s80": 1.5,
    "cold": -15,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Charlotte",
@@ -1039,7 +1039,7 @@
    "s50": 1.0,
    "s80": 1.5,
    "cold": -15,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Atlanta",
@@ -1086,7 +1086,7 @@
    "s50": 1.0,
    "s80": 1.5,
    "cold": -15,
-   "tracked": true,
+   "tracked": false,
    "cities": [
     {
      "name": "Dallas",
