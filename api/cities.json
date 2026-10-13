@@ -1,7 +1,7 @@
 {
  "name": "Snow Day Forecaster — metro thresholds",
  "url": "https://www.snowdayforecaster.com/cities/",
- "updated": "2026-10-09",
+ "updated": "2026-10-13",
  "license": "CC BY 4.0",
  "attribution": "Snow Day Forecaster (https://www.snowdayforecaster.com)",
  "note": "New snow (inches, plain overnight snowfall) needed for a 50% / 80% chance a school district closes; cold-only threshold is wind chill °F. Metro figures inherit the state regional model; see /methodology/.",
@@ -465,6 +465,174 @@
      "name": "Garland",
      "zip": "75040",
      "avg_snowfall_in": 2
+    }
+   ]
+  },
+  {
+   "slug": "minneapolis",
+   "name": "Minneapolis",
+   "state": "MN",
+   "url": "https://www.snowdayforecaster.com/cities/minneapolis/",
+   "kw": "snow day minneapolis",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "places": [
+    {
+     "name": "Minneapolis",
+     "zip": "55401",
+     "avg_snowfall_in": 52
+    },
+    {
+     "name": "St. Paul",
+     "zip": "55102",
+     "avg_snowfall_in": 52
+    },
+    {
+     "name": "Bloomington",
+     "zip": "55420",
+     "avg_snowfall_in": 50
+    },
+    {
+     "name": "Plymouth",
+     "zip": "55447",
+     "avg_snowfall_in": 54
+    },
+    {
+     "name": "Eden Prairie",
+     "zip": "55344",
+     "avg_snowfall_in": 52
+    },
+    {
+     "name": "Maple Grove",
+     "zip": "55369",
+     "avg_snowfall_in": 54
+    }
+   ]
+  },
+  {
+   "slug": "columbus",
+   "name": "Columbus",
+   "state": "OH",
+   "url": "https://www.snowdayforecaster.com/cities/columbus/",
+   "kw": "snow day columbus",
+   "s50": 2.8,
+   "s80": 5.3,
+   "cold": -11,
+   "places": [
+    {
+     "name": "Columbus",
+     "zip": "43215",
+     "avg_snowfall_in": 28
+    },
+    {
+     "name": "Dublin",
+     "zip": "43017",
+     "avg_snowfall_in": 28
+    },
+    {
+     "name": "Westerville",
+     "zip": "43081",
+     "avg_snowfall_in": 28
+    },
+    {
+     "name": "Hilliard",
+     "zip": "43026",
+     "avg_snowfall_in": 28
+    },
+    {
+     "name": "Grove City",
+     "zip": "43123",
+     "avg_snowfall_in": 27
+    },
+    {
+     "name": "Gahanna",
+     "zip": "43230",
+     "avg_snowfall_in": 28
+    }
+   ]
+  },
+  {
+   "slug": "milwaukee",
+   "name": "Milwaukee",
+   "state": "WI",
+   "url": "https://www.snowdayforecaster.com/cities/milwaukee/",
+   "kw": "snow day milwaukee",
+   "s50": 6.2,
+   "s80": 11.1,
+   "cold": -35,
+   "places": [
+    {
+     "name": "Milwaukee",
+     "zip": "53202",
+     "avg_snowfall_in": 47
+    },
+    {
+     "name": "Wauwatosa",
+     "zip": "53226",
+     "avg_snowfall_in": 47
+    },
+    {
+     "name": "West Allis",
+     "zip": "53214",
+     "avg_snowfall_in": 47
+    },
+    {
+     "name": "Waukesha",
+     "zip": "53186",
+     "avg_snowfall_in": 46
+    },
+    {
+     "name": "Brookfield",
+     "zip": "53045",
+     "avg_snowfall_in": 46
+    },
+    {
+     "name": "Greenfield",
+     "zip": "53220",
+     "avg_snowfall_in": 47
+    }
+   ]
+  },
+  {
+   "slug": "albany",
+   "name": "Albany",
+   "state": "NY",
+   "url": "https://www.snowdayforecaster.com/cities/albany/",
+   "kw": "snow day albany",
+   "s50": 5.2,
+   "s80": 9.0,
+   "cold": -16,
+   "places": [
+    {
+     "name": "Albany",
+     "zip": "12203",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Schenectady",
+     "zip": "12305",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Troy",
+     "zip": "12180",
+     "avg_snowfall_in": 62
+    },
+    {
+     "name": "Clifton Park",
+     "zip": "12065",
+     "avg_snowfall_in": 62
+    },
+    {
+     "name": "Delmar",
+     "zip": "12054",
+     "avg_snowfall_in": 60
+    },
+    {
+     "name": "Guilderland",
+     "zip": "12084",
+     "avg_snowfall_in": 61
     }
    ]
   }

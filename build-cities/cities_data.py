@@ -127,4 +127,52 @@ CITIES = {
           "can shut every district in the Metroplex with no accumulation at all, which is why DFW closings "
           "often begin as delays that convert to full closures once roads refreeze."),
    neighbors=[]),
+
+ "minneapolis": dict(
+   name="Minneapolis", state="MN", kw="snow day minneapolis",
+   board=[("Minneapolis","55401",52),("St. Paul","55102",52),("Bloomington","55420",50),
+          ("Plymouth","55447",54),("Eden Prairie","55344",52),("Maple Grove","55369",54)],
+   districts=["Minneapolis Public Schools","Saint Paul Public Schools","Anoka-Hennepin School District","Osseo Area Schools"],
+   announce=["KARE 11 (NBC)","WCCO 4 (CBS)","KSTP 5 (ABC)","district websites and alerts"],
+   blurb=("The Twin Cities are built for winter, so schools here tolerate snow that would close districts further south "
+          "and rarely take a day for snowfall alone. What closes Minneapolis and Saint Paul schools is extreme cold: "
+          "Minnesota lets districts call off for dangerous wind chill, and a hard Arctic outbreak shuts the metro several "
+          "times most winters with little or no fresh snow."),
+   neighbors=["milwaukee","chicago"]),
+
+ "columbus": dict(
+   name="Columbus", state="OH", kw="snow day columbus",
+   board=[("Columbus","43215",28),("Dublin","43017",28),("Westerville","43081",28),
+          ("Hilliard","43026",28),("Grove City","43123",27),("Gahanna","43230",28)],
+   districts=["Columbus City Schools","South-Western City School District","Dublin City Schools","Olentangy Local School District"],
+   announce=["WBNS 10 (CBS)","WCMH 4 (NBC)","WSYX 6 (ABC)","district websites and alerts"],
+   blurb=("Central Ohio gets moderate snow, around 28 inches a winter, and ice is as likely to close Columbus schools as "
+          "snow is. Columbus City Schools, one of the largest districts in Ohio, and the big suburban districts around it "
+          "weigh road conditions and wind chill heavily, so a forecast of freezing rain or a hard overnight freeze can "
+          "close schools on a day with very little snow on the ground."),
+   neighbors=["cleveland","detroit"]),
+
+ "milwaukee": dict(
+   name="Milwaukee", state="WI", kw="snow day milwaukee",
+   board=[("Milwaukee","53202",47),("Wauwatosa","53226",47),("West Allis","53214",47),
+          ("Waukesha","53186",46),("Brookfield","53045",46),("Greenfield","53220",47)],
+   districts=["Milwaukee Public Schools","Wauwatosa School District","West Allis-West Milwaukee School District","Waukesha School District"],
+   announce=["TMJ4 (WTMJ, NBC)","WISN 12 (ABC)","WITI 6 (FOX)","district websites and alerts"],
+   blurb=("Milwaukee sits on Lake Michigan, which both moderates the cold and feeds lake-enhanced snow, so the metro "
+          "tolerates a good deal of snow before closing. Milwaukee Public Schools, the largest district in Wisconsin, "
+          "tends to set the tone for the area, and ice and dangerous wind chill close schools here as often as heavy "
+          "snowfall does."),
+   neighbors=["chicago","minneapolis"]),
+
+ "albany": dict(
+   name="Albany", state="NY", kw="snow day albany",
+   board=[("Albany","12203",60),("Schenectady","12305",60),("Troy","12180",62),
+          ("Clifton Park","12065",62),("Delmar","12054",60),("Guilderland","12084",61)],
+   districts=["Albany City School District","Shenendehowa Central School District","Bethlehem Central School District","Schenectady City School District"],
+   announce=["WNYT NewsChannel 13 (NBC)","News10 WTEN (ABC)","WRGB CBS 6 (CBS)","district websites and alerts"],
+   blurb=("The Capital Region averages around 60 inches a winter and its districts are used to it, so it takes a real "
+          "storm, an ice event or deep cold to close schools here. Nor'easters climbing the coast and cold air draining "
+          "down from the Adirondacks are the usual triggers, and the city, Schenectady and the suburban districts around "
+          "them do not always make the same call on the same morning."),
+   neighbors=["nyc","syracuse","boston"]),
 }
