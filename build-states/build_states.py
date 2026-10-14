@@ -75,11 +75,12 @@ def build_state(code, d):
     big = cities[0]
     s50, s80, cold = tier["s50"], tier["s80"], tier["cold"]
 
-    title = f"{name} Snow Day Calculator: Chance of a Snow Day Tomorrow by City"
-    desc = (f"Will schools close tomorrow in {name}? Live snow day chances for {', '.join(c['name'].split(' (')[0] for c in cities[:4])} and more, "
-            f"plus how much snow closes {name} schools ({s50} in for a 50% chance) and where closings are announced.")
-    h1 = f"Snow day chances in {name} tomorrow"
-    lede = f"A live snow day calculator for {name}: the chance school closes tomorrow in each major city, how much snow it takes, and where {name} districts announce closings."
+    title = f"{name} School Closings Tomorrow? Snow Day Chances by City"
+    _c = [c['name'].split(' (')[0] for c in cities[:2]]
+    desc = (f"{name} school closings and delays: the live chance of a snow day tomorrow in {' and '.join(_c)}, "
+            f"how much snow it takes, and where closings are announced.")
+    h1 = f"{name} school closings: snow day chances for tomorrow"
+    lede = f"Checking {name} school closings? This live snow day calculator gives the chance school closes tomorrow in each major city, how much snow it takes, and where {name} districts announce closings."
 
     # --- live board ---
     board = (
@@ -133,7 +134,7 @@ def build_state(code, d):
     dl = "".join(f"<li>{E(x)}</li>" for x in d["districts"])
     al = "".join(f"<li>{E(x)}</li>" for x in d["announce"])
     where = (
-        f'<h2 id="closings">Where {E(name)} school closings are announced</h2>'
+        f'<h2 id="closings">{E(name)} school closings and delays: where to check</h2>'
         f'<p>Closures are decided district by district. The largest districts in {E(name)} by enrollment, whose calls tend to set the tone for their neighbours:</p>'
         f'<ul>{dl}</ul>'
         f'<p>Official announcements come from the district itself — its website, app, text and email alerts — and are mirrored on local closings lists. In {E(name)} the lists most families check:</p>'
@@ -145,6 +146,8 @@ def build_state(code, d):
 
     # --- FAQ ---
     faqs = [
+        (f"Are schools closed tomorrow in {name}?",
+         f"Each {name} district announces its own closings and two-hour delays, usually the evening before or by 5:30 a.m., on its website and alerts and on local closings lists such as {d['announce'][0]}. Before the announcement, the board above gives the chance of a closure in each major {name} city from the latest forecast."),
         (f"Will schools close tomorrow in {name}?",
          f"The live board at the top of this page gives the chance for each major {name} city from the latest forecast; enter your ZIP code for your own neighbourhood. As a rule of thumb it takes about {fmt_in(s50)} of new overnight snow for a 50% chance in {name}, less if there is ice or snow already on the ground."),
         (f"How much snow does it take to cancel school in {name}?",
