@@ -1,7 +1,7 @@
 {
  "name": "Snow Day Forecaster — metro thresholds",
  "url": "https://www.snowdayforecaster.com/cities/",
- "updated": "2026-10-13",
+ "updated": "2026-10-14",
  "license": "CC BY 4.0",
  "attribution": "Snow Day Forecaster (https://www.snowdayforecaster.com)",
  "note": "New snow (inches, plain overnight snowfall) needed for a 50% / 80% chance a school district closes; cold-only threshold is wind chill °F. Metro figures inherit the state regional model; see /methodology/.",

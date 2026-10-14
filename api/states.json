@@ -1,7 +1,7 @@
 {
  "name": "Snow Day Forecaster — state thresholds",
  "url": "https://www.snowdayforecaster.com/states/",
- "updated": "2026-10-09",
+ "updated": "2026-10-14",
  "license": "CC BY 4.0",
  "attribution": "Snow Day Forecaster (https://www.snowdayforecaster.com)",
  "note": "New snow (inches, plain overnight snowfall, no ice, no existing pack) needed for a 50% / 80% chance that a school district closes; cold-only threshold is wind chill °F. Regional model; see /methodology/.",
