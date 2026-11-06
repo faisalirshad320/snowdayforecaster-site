@@ -158,4 +158,4 @@ used. The closure dataset is offered under CC BY 4.0.
 - [Is there school on Memorial Day?](https://www.snowdayforecaster.com/is-there-school-on/memorial-day/): next date 2027-05-31; federal holiday.
 - [Is there school on Labor Day?](https://www.snowdayforecaster.com/is-there-school-on/labor-day/): next date 2027-09-06; federal holiday.
 - [Is there school on Juneteenth?](https://www.snowdayforecaster.com/is-there-school-on/juneteenth/): next date 2027-06-18; federal holiday.
-- [Is there school on Election Day?](https://www.snowdayforecaster.com/is-there-school-on/election-day/): next date 2026-11-03; not a federal holiday.
+- [Is there school on Election Day?](https://www.snowdayforecaster.com/is-there-school-on/election-day/): next date 2027-11-02; not a federal holiday.

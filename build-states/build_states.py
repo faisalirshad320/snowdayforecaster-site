@@ -8,6 +8,8 @@ Run from the repo root:  python3 build-states/build_states.py
 import json, os, re, sys, html, datetime
 sys.path.insert(0, os.path.dirname(__file__))
 from states_data import STATES, TIERS, TIER_TEXT, SEASON
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "build-cities"))
+import pagedates as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://www.snowdayforecaster.com"
@@ -178,7 +180,7 @@ def build_state(code, d):
 
     # --- schema ---
     page_ld = {"@context": "https://schema.org", "@type": "WebPage", "@id": url + "#page", "url": url, "name": title, "description": desc,
-               "inLanguage": "en-US", "dateModified": TODAY,
+               "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
                "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE},
                "about": {"@type": "Place", "name": name},
                "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["#answer", "h1"]}}
@@ -240,8 +242,7 @@ def build_state(code, d):
 </html>
 """
     out = os.path.join(ROOT, "states", code.lower(), "index.html")
-    os.makedirs(os.path.dirname(out), exist_ok=True)
-    open(out, "w", encoding="utf-8").write(page)
+    pd.write_page(out, url, page)
     return dict(code=code, name=name, url=url, tier=d["tier"], s50=s50, s80=s80, cold=cold, tracked=tracked,
                 cities=[dict(name=c["name"], zip=c["zip"], avg_snowfall_in=c["snow"]) for c in cities])
 
@@ -261,28 +262,29 @@ def build_hub(summary):
     s = re.sub(r"<h2>States</h2>.*?(?=<p class=\"note\">States without)", new_block, s, flags=re.S)
     s = s.replace("Pick your state below for its threshold and the districts we track there.",
                   "Pick your state below for its threshold, a live board of tomorrow's chances in its major cities, and where closings are announced.")
-    s = re.sub(r'"dateModified":"\d{4}-\d{2}-\d{2}"', f'"dateModified":"{TODAY}"', s)
-    open(p, "w", encoding="utf-8").write(s)
+    s = re.sub(r'"dateModified":"\d{4}-\d{2}-\d{2}"', '"dateModified":"' + pd.MOD + '"', s)
+    pd.write_page(p, SITE + "/states/", s)
 
 # ---------- sitemap ----------
 def update_sitemap(summary):
     p = os.path.join(ROOT, "sitemap.xml")
     s = open(p, encoding="utf-8").read()
     s = re.sub(r"<url><loc>https://www\.snowdayforecaster\.com/states/[a-z]{2}/</loc>.*?</url>\s*", "", s, flags=re.S)
-    entries = "".join(f"<url><loc>{x['url']}</loc><lastmod>{TODAY}</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>\n" for x in summary)
+    entries = "".join(f"<url><loc>{x['url']}</loc><lastmod>{pd.lastmod(x['url'])}</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>\n" for x in summary)
     s = s.replace("</urlset>", entries + "</urlset>")
-    s = re.sub(r"(<loc>https://www\.snowdayforecaster\.com/states/</loc><lastmod>)[^<]+", r"\g<1>" + TODAY, s)
+    s = re.sub(r"(<loc>https://www\.snowdayforecaster\.com/states/</loc><lastmod>)[^<]+", r"\g<1>" + pd.lastmod(SITE + "/states/"), s)
     open(p, "w", encoding="utf-8").write(s)
 
 def main():
     summary = [build_state(c, d) for c, d in STATES.items()]
     build_hub(summary)
     update_sitemap(summary)
-    api = {"name": "Snow Day Forecaster — state thresholds", "url": SITE + "/states/", "updated": TODAY, "license": "CC BY 4.0",
+    api = {"name": "Snow Day Forecaster — state thresholds", "url": SITE + "/states/", "updated": max(pd.lastmod(x["url"]) for x in summary), "license": "CC BY 4.0",
            "attribution": "Snow Day Forecaster (https://www.snowdayforecaster.com)",
            "note": "New snow (inches, plain overnight snowfall, no ice, no existing pack) needed for a 50% / 80% chance that a school district closes; cold-only threshold is wind chill °F. Regional model; see /methodology/.",
            "regions": {k: v for k, v in TIERS.items()}, "states": summary}
     json.dump(api, open(os.path.join(ROOT, "api", "states.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    pd.save()
     print(f"built {len(summary)} state pages, hub, sitemap, api/states.json")
 
 if __name__ == "__main__":

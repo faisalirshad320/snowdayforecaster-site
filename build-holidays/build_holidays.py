@@ -14,6 +14,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(ROOT, "build-cities"))
 sys.path.insert(0, os.path.join(ROOT, "build-states"))
 import build_cities as bc   # reuse HEAD, STYLE, HEADER, FOOTER, ORG, EXTRA_CSS, jsonld
+import pagedates as pd
 
 E, SITE = bc.E, bc.SITE
 TODAY = datetime.date.today()
@@ -253,7 +254,7 @@ def build_page(h):
                '<li><a href="/states/">Snow days by state</a></li><li><a href="/cities/">Snow days by city</a></li></ul></nav>')
 
     page_ld = {"@context": "https://schema.org", "@type": "WebPage", "@id": url + "#page", "url": url, "name": title,
-               "description": desc, "inLanguage": "en-US", "dateModified": TODAY.isoformat(),
+               "description": desc, "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
                "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE},
                "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["#answer", "h1"]}}
     crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -275,8 +276,7 @@ def build_page(h):
             f'<h1>{E(h1)}</h1><p class="lede">{E(lede)}</p>'
             f'{body}{faq_html}{nav}{related}</main>\n{bc.FOOTER}\n</body>\n</html>\n')
     out = os.path.join(ROOT, "is-there-school-on", h["slug"], "index.html")
-    os.makedirs(os.path.dirname(out), exist_ok=True)
-    open(out, "w", encoding="utf-8").write(page)
+    pd.write_page(out, url, page)
     return dict(slug=h["slug"], name=short, url=url, next=nd.isoformat(), federal=h["federal"], kw=h["kw"])
 
 # ---------------------------------------------------------------- hub
@@ -298,7 +298,7 @@ def build_hub(summary):
             'especially — are the ones most often reclaimed as snow make-up days after a heavy winter. For the chance '
             'of a weather closure tomorrow, use the <a href="/">snow day calculator</a>.</p>')
     page_ld = {"@context": "https://schema.org", "@type": "CollectionPage", "@id": url + "#page", "url": url,
-               "name": title, "description": desc, "inLanguage": "en-US", "dateModified": TODAY.isoformat(),
+               "name": title, "description": desc, "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
                "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}}
     list_ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "US school holidays",
                "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": x["name"], "url": x["url"]}
@@ -310,17 +310,16 @@ def build_hub(summary):
             '<p class="lede">The next date for every major school holiday, and whether districts usually close.</p>'
             f'{body}</main>\n{bc.FOOTER}\n</body>\n</html>\n')
     out = os.path.join(ROOT, "is-there-school-on", "index.html")
-    os.makedirs(os.path.dirname(out), exist_ok=True)
-    open(out, "w", encoding="utf-8").write(page)
+    pd.write_page(out, url, page)
 
 # ---------------------------------------------------------------- sitemap + llms
 def update_sitemap(summary):
     p = os.path.join(ROOT, "sitemap.xml")
     s = open(p, encoding="utf-8").read()
     s = re.sub(r"<url><loc>https://www\.snowdayforecaster\.com/is-there-school-on/[a-z-]*/?</loc>.*?</url>\s*", "", s, flags=re.S)
-    t = TODAY.isoformat()
-    extra = f'<url><loc>{SITE}/is-there-school-on/</loc><lastmod>{t}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>\n'
-    extra += "".join(f'<url><loc>{x["url"]}</loc><lastmod>{t}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n' for x in summary)
+    hub = SITE + '/is-there-school-on/'
+    extra = f'<url><loc>{hub}</loc><lastmod>{pd.lastmod(hub)}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>\n'
+    extra += "".join(f'<url><loc>{x["url"]}</loc><lastmod>{pd.lastmod(x["url"])}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n' for x in summary)
     open(p, "w", encoding="utf-8").write(s.replace("</urlset>", extra + "</urlset>"))
 
 def update_llms(summary):
@@ -338,6 +337,7 @@ def main():
     build_hub(summary)
     update_sitemap(summary)
     update_llms(summary)
+    pd.save()
     print(f"built {len(summary)} holiday pages + hub, sitemap, llms.txt")
 
 if __name__ == "__main__":
