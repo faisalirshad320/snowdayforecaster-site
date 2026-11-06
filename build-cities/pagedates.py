@@ -34,21 +34,35 @@ def _load():
 
 def _git_first_seen(path):
     try:
-        out = subprocess.run(["git", "log", "--diff-filter=A", "--follow", "--format=%cs", "--", path],
+        out = subprocess.run(["git", "log", "--diff-filter=A", "--format=%cs", "--", path],
                              cwd=ROOT, capture_output=True, text=True, timeout=20).stdout.split()
         return out[-1] if out else None
     except Exception:
         return None
 
+HASH_VERSION = 2   # 2 = title + meta description + <main>; chrome (head tags, header, footer) is ignored
+
+def content_of(page):
+    """What a reader sees: title, meta description and the <main> block. Head/footer changes
+    (a new meta tag, a footer link) are not content changes and must not move dateModified."""
+    t = re.search(r"<title>(.*?)</title>", page, re.S)
+    d = re.search(r'<meta name="description" content="([^"]*)"', page)
+    m = re.search(r"<main\b.*?</main>", page, re.S)
+    if not m:
+        return page
+    return (t.group(1) if t else "") + "\n" + (d.group(1) if d else "") + "\n" + m.group(0)
+
 def stamp(url, content, path=None):
     """Return (published, modified) for url, given the page's rendered content."""
     db = _load()
-    h = hashlib.sha256(content.encode("utf-8")).hexdigest()
+    h = hashlib.sha256(content_of(content).encode("utf-8")).hexdigest()
     rec = db.get(url)
+    if rec is not None and rec.get("hv") != HASH_VERSION:
+        rec.update(hash=h, hv=HASH_VERSION)      # re-baseline on a hashing change; dates untouched
     if rec is None:
         published = (path and _git_first_seen(os.path.relpath(path, ROOT))) or TODAY
         seeded = _sitemap.get(url)
-        rec = {"hash": h, "published": published, "modified": seeded or TODAY}
+        rec = {"hash": h, "hv": HASH_VERSION, "published": published, "modified": seeded or TODAY}
         db[url] = rec
     elif rec["hash"] != h:
         rec["hash"], rec["modified"] = h, TODAY

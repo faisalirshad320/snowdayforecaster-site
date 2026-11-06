@@ -60,6 +60,16 @@ def jsonld(obj):
 def fmt_in(x):
     return ("%g" % x) + (" inch" if x == 1 else " inches")
 
+ALL_STATES = {"AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado",
+ "CT": "Connecticut", "DE": "Delaware", "DC": "District of Columbia", "FL": "Florida", "GA": "Georgia", "HI": "Hawaii",
+ "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "IA": "Iowa", "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana",
+ "ME": "Maine", "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota", "MS": "Mississippi",
+ "MO": "Missouri", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada", "NH": "New Hampshire", "NJ": "New Jersey",
+ "NM": "New Mexico", "NY": "New York", "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio", "OK": "Oklahoma",
+ "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina", "SD": "South Dakota",
+ "TN": "Tennessee", "TX": "Texas", "UT": "Utah", "VT": "Vermont", "VA": "Virginia", "WA": "Washington",
+ "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming"}
+
 # ---------- one state page ----------
 def build_state(code, d):
     name, tier = d["name"], TIERS[d["tier"]]
@@ -92,7 +102,12 @@ def build_state(code, d):
         f'{E(name)} districts make their own call, usually the night before or by 5:30 a.m.</p>'
         f'<p class="sb-summary" id="sb-summary">Loading the latest forecast…</p>'
         f'<div id="stateboard" aria-live="polite"><p class="note">Loading tomorrow\'s chances…</p></div>'
-        f'<form class="zipcta" action="/" method="get"><label for="zipcta" class="visually-hidden" style="position:absolute;left:-9999px">ZIP code</label>'
+        + ('<noscript><p>Tomorrow\'s chances need the live forecast, which runs in your browser. The fixed figures for each city: '
+           f'about {s50:g} inches of new snow gives a 50% chance of a closing in {E(name)} and {s80:g} inches gives 80%.</p>'
+           '<div class="tw"><table><thead><tr><th>City</th><th>ZIP</th><th>Average snowfall a year</th></tr></thead><tbody>'
+           + "".join(f'<tr><td>{E(c["name"])}</td><td><a href="/?zip={c["zip"]}">{c["zip"]}</a></td><td>{c["snow"]:g} in</td></tr>' for c in cities)
+           + '</tbody></table></div><p class="note">Average snowfall: NOAA 1991–2020 climate normals, rounded.</p></noscript>')
+        + f'<form class="zipcta" action="/" method="get"><label for="zipcta" class="visually-hidden" style="position:absolute;left:-9999px">ZIP code</label>'
         f'<input id="zipcta" name="zip" inputmode="numeric" pattern="[0-9]{{5}}" maxlength="5" placeholder="Your {E(name)} ZIP code" required>'
         f'<button type="submit">Check my ZIP</button></form>'
         f'<p class="note">Chances are cached for 30 minutes in your browser. Forecast: Open-Meteo, with the National Weather Service as backup.</p>'
@@ -181,7 +196,7 @@ def build_state(code, d):
     # --- schema ---
     page_ld = {"@context": "https://schema.org", "@type": "WebPage", "@id": url + "#page", "url": url, "name": title, "description": desc,
                "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
-               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE},
+               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}, "author": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}, "publisher": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE},
                "about": {"@type": "Place", "name": name},
                "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["#answer", "h1"]}}
     crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -204,9 +219,10 @@ def build_state(code, d):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc)}">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <link rel="canonical" href="{url}">
 <meta name="theme-color" content="#1d5bb8">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Snow Day Forecaster">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Snow Day Forecaster">
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}">
 <meta property="og:url" content="{url}"><meta property="og:image" content="{SITE}/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -258,7 +274,12 @@ def build_hub(summary):
         if not items: continue
         cards = "".join(f'<a href="/states/{x["code"].lower()}/"><b>{E(x["name"])}</b><span>{x["s50"]:g} in for a 50% chance{" · tracked" if x["tracked"] else ""}</span></a>' for x in items)
         groups.append(f'<h3>{E(TIERS[t]["label"])}</h3><div class="cards">{cards}</div>')
-    new_block = "<h2>States</h2>" + "".join(groups)
+    covered = {x["code"] for x in summary}
+    missing = [n for c, n in ALL_STATES.items() if c not in covered]
+    note = ('<p class="note" id="not-covered">No state page yet for ' + ", ".join(missing[:-1]) + " or " + missing[-1]
+            + '. The <a href="/">snow day calculator</a> works for any US ZIP code, including those states; a state page is '
+            'added when we have its cities, snowfall normals, largest districts and closing outlets written up.</p>')
+    new_block = "<h2>States</h2>" + "".join(groups) + note
     s = re.sub(r"<h2>States</h2>.*?(?=<p class=\"note\">States without)", new_block, s, flags=re.S)
     s = s.replace("Pick your state below for its threshold and the districts we track there.",
                   "Pick your state below for its threshold, a live board of tomorrow's chances in its major cities, and where closings are announced.")

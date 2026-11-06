@@ -63,9 +63,10 @@ HEAD = """<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <link rel="canonical" href="{url}">
 <meta name="theme-color" content="#1d5bb8">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Snow Day Forecaster">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Snow Day Forecaster">
 <meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}"><meta property="og:image" content="{site}/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -196,7 +197,7 @@ def build_city(slug, d):
 
     page_ld = {"@context": "https://schema.org", "@type": "WebPage", "@id": url + "#page", "url": url, "name": title, "description": desc,
                "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
-               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE},
+               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}, "author": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}, "publisher": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE},
                "about": {"@type": "City", "name": name},
                "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["#answer", "h1"]}}
     crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -240,7 +241,7 @@ def build_hub(summary):
         groups.append(f'<h3>{E(STATES[st]["name"])}</h3><div class="cards">{cards}</div>')
     page_ld = {"@context": "https://schema.org", "@type": "CollectionPage", "@id": url + "#page", "url": url,
                "name": title, "description": desc, "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
-               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}}
+               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}, "author": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}, "publisher": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}}
     crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
         {"@type": "ListItem", "position": 2, "name": "Cities", "item": url}]}
@@ -295,7 +296,7 @@ def build_questions():
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub("<[^>]+>", "", a)}} for q, a in QUESTIONS]}
     page_ld = {"@context": "https://schema.org", "@type": "WebPage", "@id": url + "#page", "url": url, "name": title, "description": desc,
-               "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD, "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE},
+               "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD, "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}, "author": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}, "publisher": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE},
                "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["#answer", "h1"]}}
     crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
