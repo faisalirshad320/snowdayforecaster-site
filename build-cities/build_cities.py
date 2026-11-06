@@ -14,6 +14,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(os.path.dirname(HERE), "build-states"))
 from cities_data import CITIES
 from states_data import STATES, TIERS, TIER_TEXT, SEASON
+import pagedates as pd
 
 ROOT = os.path.dirname(HERE)
 SITE = "https://www.snowdayforecaster.com"
@@ -62,9 +63,10 @@ HEAD = """<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <link rel="canonical" href="{url}">
 <meta name="theme-color" content="#1d5bb8">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Snow Day Forecaster">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Snow Day Forecaster">
 <meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}"><meta property="og:image" content="{site}/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -194,8 +196,8 @@ def build_city(slug, d):
                '<li><a href="/two-hour-delay/">Two-hour delays</a></li><li><a href="/cold-day-school-closings/">Cold days and wind chill</a></li></ul></nav>')
 
     page_ld = {"@context": "https://schema.org", "@type": "WebPage", "@id": url + "#page", "url": url, "name": title, "description": desc,
-               "inLanguage": "en-US", "dateModified": TODAY,
-               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE},
+               "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
+               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}, "author": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}, "publisher": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE},
                "about": {"@type": "City", "name": name},
                "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["#answer", "h1"]}}
     crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -220,8 +222,7 @@ def build_city(slug, d):
             f'{board}{how}{normals}{where}{rules}{faq_html}{nearby}{related}</main>\n{FOOTER}\n</body>\n</html>\n')
 
     out = os.path.join(ROOT, "cities", slug, "index.html")
-    os.makedirs(os.path.dirname(out), exist_ok=True)
-    open(out, "w", encoding="utf-8").write(page)
+    pd.write_page(out, url, page)
     return dict(slug=slug, name=name, state=st, url=url, kw=d["kw"], s50=s50, s80=s80, cold=cold,
                 places=[dict(name=c["name"], zip=c["zip"], avg_snowfall_in=c["snow"]) for c in locs])
 
@@ -239,8 +240,8 @@ def build_hub(summary):
         cards = "".join(f'<a href="/cities/{x["slug"]}/"><b>{E(x["name"])}</b><span>{x["s50"]:g} in for a 50% chance</span></a>' for x in items)
         groups.append(f'<h3>{E(STATES[st]["name"])}</h3><div class="cards">{cards}</div>')
     page_ld = {"@context": "https://schema.org", "@type": "CollectionPage", "@id": url + "#page", "url": url,
-               "name": title, "description": desc, "inLanguage": "en-US", "dateModified": TODAY,
-               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}}
+               "name": title, "description": desc, "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
+               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}, "author": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}, "publisher": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}}
     crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
         {"@type": "ListItem", "position": 2, "name": "Cities", "item": url}]}
@@ -254,7 +255,7 @@ def build_hub(summary):
             '<p class="note">Each metro board runs the same published model used across the site on the current forecast for a cluster of places in the area.</p>'
             '</main>\n' + FOOTER + '\n</body>\n</html>\n')
     os.makedirs(os.path.join(ROOT, "cities"), exist_ok=True)
-    open(os.path.join(ROOT, "cities", "index.html"), "w", encoding="utf-8").write(page)
+    pd.write_page(os.path.join(ROOT, "cities", "index.html"), url, page)
 
 # ---------- snow-day-questions AEO hub ----------
 QUESTIONS = [
@@ -295,7 +296,7 @@ def build_questions():
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub("<[^>]+>", "", a)}} for q, a in QUESTIONS]}
     page_ld = {"@context": "https://schema.org", "@type": "WebPage", "@id": url + "#page", "url": url, "name": title, "description": desc,
-               "inLanguage": "en-US", "dateModified": TODAY, "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE},
+               "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD, "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}, "author": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}, "publisher": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE},
                "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["#answer", "h1"]}}
     crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
@@ -311,8 +312,7 @@ def build_questions():
             f'<h1>Snow day questions, answered</h1>'
             f'<p class="lede">The questions people ask most about snow days — the odds tomorrow, what a snow day percentage means, how much snow cancels school, and how the forecast is worked out.</p>'
             f'{answer_block}<h2 id="faq">Common snow day questions</h2>{qa_html}{related}</main>\n{FOOTER}\n</body>\n</html>\n')
-    os.makedirs(os.path.join(ROOT, "snow-day-questions"), exist_ok=True)
-    open(os.path.join(ROOT, "snow-day-questions", "index.html"), "w", encoding="utf-8").write(page)
+    pd.write_page(os.path.join(ROOT, "snow-day-questions", "index.html"), url, page)
 
 # ---------- sitemap + api + llms ----------
 def update_sitemap(summary):
@@ -320,9 +320,9 @@ def update_sitemap(summary):
     s = open(p, encoding="utf-8").read()
     s = re.sub(r"<url><loc>https://www\.snowdayforecaster\.com/cities/[a-z-]*/?</loc>.*?</url>\s*", "", s, flags=re.S)
     s = re.sub(r"<url><loc>https://www\.snowdayforecaster\.com/snow-day-questions/</loc>.*?</url>\s*", "", s, flags=re.S)
-    extra = f'<url><loc>{SITE}/cities/</loc><lastmod>{TODAY}</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>\n'
-    extra += f'<url><loc>{SITE}/snow-day-questions/</loc><lastmod>{TODAY}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n'
-    extra += "".join(f"<url><loc>{x['url']}</loc><lastmod>{TODAY}</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>\n" for x in summary)
+    extra = f'<url><loc>{SITE}/cities/</loc><lastmod>{pd.lastmod(SITE + '/cities/')}</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>\n'
+    extra += f'<url><loc>{SITE}/snow-day-questions/</loc><lastmod>{pd.lastmod(SITE + '/snow-day-questions/')}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n'
+    extra += "".join(f"<url><loc>{x['url']}</loc><lastmod>{pd.lastmod(x['url'])}</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>\n" for x in summary)
     s = s.replace("</urlset>", extra + "</urlset>")
     open(p, "w", encoding="utf-8").write(s)
 
@@ -331,11 +331,12 @@ def main():
     build_hub(summary)
     build_questions()
     update_sitemap(summary)
-    api = {"name": "Snow Day Forecaster — metro thresholds", "url": SITE + "/cities/", "updated": TODAY, "license": "CC BY 4.0",
+    api = {"name": "Snow Day Forecaster — metro thresholds", "url": SITE + "/cities/", "updated": max(pd.lastmod(x["url"]) for x in summary), "license": "CC BY 4.0",
            "attribution": "Snow Day Forecaster (https://www.snowdayforecaster.com)",
            "note": "New snow (inches, plain overnight snowfall) needed for a 50% / 80% chance a school district closes; cold-only threshold is wind chill °F. Metro figures inherit the state regional model; see /methodology/.",
            "cities": summary}
     json.dump(api, open(os.path.join(ROOT, "api", "cities.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    pd.save()
     print(f"built {len(summary)} city pages, cities hub, questions hub, sitemap, api/cities.json")
 
 if __name__ == "__main__":

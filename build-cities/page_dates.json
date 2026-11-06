@@ -1,0 +1,434 @@
+{
+ "https://www.snowdayforecaster.com/add-widget/": {
+  "hash": "71b63f18f14c4bbf77b6f71306bfe204894910e7a85ce140bc9d05e0139bdb77",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/": {
+  "hash": "7beff7501ca7593696ed7665be77522378d41e27af7d775d7190a9c2d9dfd397",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/albany/": {
+  "hash": "1dfc24f38600e8bb3d8ccc0d7544175a2b97255a6d591583af174e44abe8812a",
+  "published": "2026-10-13",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/boston/": {
+  "hash": "7ab5859c3676797e054048de6bbe21a7e23952007d97172cae391c490ba37614",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/buffalo/": {
+  "hash": "10adc7f604011d9b713a2f84c19748d74d9af7a07dc1a397ea53eaf565fe4640",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/chicago/": {
+  "hash": "351e13957e4044a42ae60ddebcc85afe92fb7c20861966e5e25cd5e32de3d68d",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/cleveland/": {
+  "hash": "a33d46e6a89cdd24a2a368f2b4887d7adb170e332a22367859b0df6e90ecc447",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/columbus/": {
+  "hash": "5bf5160f35331b31a7319ee6ec933f9a45fe562db7e54a90e118f978ba8876b3",
+  "published": "2026-10-13",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/dallas/": {
+  "hash": "025a4289482fea895077859c937d4cd99b214db774575f8ebeab042be6e8385f",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/denver/": {
+  "hash": "c63cb2653262494f0ff818168cde49b50bcfd2d7235e1b3082e8ae815ac1e56f",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/detroit/": {
+  "hash": "92bbbf7cdd4e9186e51de2689b3d4a5493d052403fd47e9e9173812432975cf2",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/grand-rapids/": {
+  "hash": "2d49054b41dfe300e72bfe88d25bc164e4bfd91a6bff09b8a25cc4689bae9cb8",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/milwaukee/": {
+  "hash": "dfd8d5e33d820e3c841fb43f1ea988e9f96596f6fc3ef00f124c7a21a8190325",
+  "published": "2026-10-13",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/minneapolis/": {
+  "hash": "a80f51427f9d8303fe7cac451bc6d44cb6d2198bd48a10c1b156c063b407dd8f",
+  "published": "2026-10-13",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/nyc/": {
+  "hash": "ffdb0811e03d90bf45bb6920704413b22f04abea35bfc9e3eee6192c789a866b",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/rochester/": {
+  "hash": "55d7fc9de24d5904a9973fd29fff6d23b05082deb9fab40b7d1ed165d179fb9a",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/cities/syracuse/": {
+  "hash": "10aa83256c535463d85bac229ed0c02513fece48070d24f6610925aa239d9f78",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/": {
+  "hash": "6fbb0caf338ef25892ebf3fc474bec4f66f3589e93226feb3fe122b65ff7ef86",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/columbus-day/": {
+  "hash": "a6de306c70590e950957b47e343d64ab4f145d280ddf8fb540378431bd32bccd",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/election-day/": {
+  "hash": "b67b3eeab5c792e82f06b438442d9221839db049994b8d11574d07ed81e7e223",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/good-friday/": {
+  "hash": "4540809992d262440e18b0b895e90f36ecc17378caec817fb83686f61207e3f1",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/juneteenth/": {
+  "hash": "5c16cb11b468f080f7f443896fbc5f50e65cfab062cf90f2844c21be2e95b6df",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/labor-day/": {
+  "hash": "2dba0e494d76d248fa0c4f247c0419eaf409b08ed70c491feab3a2af562e90f8",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/memorial-day/": {
+  "hash": "367723328b480156047f50529e63bf7b229c795f5df558ee2104bdefc0a2f737",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/mlk-day/": {
+  "hash": "8afac50266f06b1380265e5a416b393e6db26b65236ae0c0833b3cb13b1751bb",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/presidents-day/": {
+  "hash": "3bf54e812c465d516b467721d3689bfa8bf0f3e86837620f79b4d28601677fec",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/thanksgiving/": {
+  "hash": "0f1a7345786afcbce5485dc3bd05efc3775fbe60ec57f9a2eb279284b0371172",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/is-there-school-on/veterans-day/": {
+  "hash": "36e64dd9a6b8b8891914f5f387599be51c5290c4410e58bc2352506425348ec6",
+  "published": "2026-10-14",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/snow-day-questions/": {
+  "hash": "8c0623d4565e47c4cb9dfe6afdbbbe8e91f4d9f444f2d47eae2a4fad2f56395b",
+  "published": "2026-10-09",
+  "modified": "2026-10-14",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/": {
+  "hash": "3704fed62e182c46a46015c0832049296455a780829cc49dcc802bf995ffd33b",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/al/": {
+  "hash": "efbceb07d7cc1eb88642b624ef2eb139512548104b2fb0fec46f213697d95ba0",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ar/": {
+  "hash": "8f10b6eb5a8575f9bb61a8dd761551aaf428b173aa0ea745553872b8205b7c59",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/co/": {
+  "hash": "9fb81aea073a05d4b14015cfc097680a1d1ef47aeb8de83c7e908e28fd7e3c22",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ct/": {
+  "hash": "db89f69c0aa09f37626a10509658cbfd8d23749fc122b2edb27a326c3292d528",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/dc/": {
+  "hash": "d6673a0d19316dade9cb88c621ff7e9cc97f9f6c9abeb3124208ca2d6fad09b7",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/de/": {
+  "hash": "32b7fbac850ddddef91cc82470e0069c4b22c8b2a3a9ba2d1cb7fd737b5429ef",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ga/": {
+  "hash": "d54d2233c63bba4bb16361c01953dd591f02845571b6d9f18cd921c4601938cd",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ia/": {
+  "hash": "ee8448bcf3eb73c4c2b9b9f285b5b0327bbafa4e11c5053ec56edcda4f974a24",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/id/": {
+  "hash": "38388f38e8717455bc2fdc71c258a76d607167f0d98d5031c0bdbc77ccbbcff1",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/il/": {
+  "hash": "d190013dfc6c48101e9f74158bfd353953f8290c1e92cd84ec73c68639eb9d1d",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/in/": {
+  "hash": "55e2a6a8a77443f78b3330932584a0abd5a787d4b8c8cb273a859e0b18da05e8",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ks/": {
+  "hash": "992cd1824214b86c79cbb9f2db7a31b94bcd72fefc43ec21b24dc6b44b36a42f",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ky/": {
+  "hash": "5622a40760f19a24155d186592fe3fb54c7efe903bc5529a58ab58a93bcd8002",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ma/": {
+  "hash": "efcf88b09e182a67573ef02911b48de9b79286df1d8339fe433c266b8da4946d",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/md/": {
+  "hash": "9b4dfb234e3772cc708c2036574a13d40a8ed6f2ce17e6347e47b6285c0a9d87",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/me/": {
+  "hash": "b2c96f19646d2993da7357549f439f6f460a9fc2d3c600432c7ef217a9cb344b",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/mi/": {
+  "hash": "85a48ada54443ccf0b4e888e80cb5eaf96c7abe0b9399150ddb403b8ac09f125",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/mn/": {
+  "hash": "36a6b29a4d5d94f0fcf7df56224b1a233196f155c0bda7a81d5aab6bcb8e2d1c",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/mo/": {
+  "hash": "9a2b5699a18151b3fbce22eefb0a9fc0a1901e9642774791de63cf8a9deaca1b",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/mt/": {
+  "hash": "53a512af319baa8bc9bec3a25cb284a041f6a596173065f70ec0ada806ce7310",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/nc/": {
+  "hash": "27e8b158edfcbe82c99b1746c3f59dde9bbc7df9b4e630f6724b7904df00039b",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/nd/": {
+  "hash": "f1c4e278db5800a03d2624e5d21a6aed60c6b8e03dff9debc2c05e0da54dab0b",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ne/": {
+  "hash": "eea4fb9ad02b84b58950abb1e1c031723ed064c4c6d2d1616b1799ac62c080a7",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/nh/": {
+  "hash": "6387c9cdd8025feefa6e5b1e518e5a551e9f00b742378e75ac6cecde4ed7909c",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/nj/": {
+  "hash": "2d89ee3fe5939c4624e0c11d9ef40f7cbd99e2d91b84e4c3cdf8db2971b7bff2",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/nm/": {
+  "hash": "f3a9c57ed1ea190a95e8b20500094969ef2e9ff605c69538b632a7044276e0c9",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ny/": {
+  "hash": "e3a08909e7467a61669c6a3a09a8e12b30a8aead7ca858a289463c0230497018",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/oh/": {
+  "hash": "f599ac5d2e67ed7ec5d8c0598babf8580c8a788bb7eb70b49cd85f2c7de75401",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ok/": {
+  "hash": "febda03af8265fb323f6bc9144a72220e29d2e4a5a9744c9750a381cbca4c6bb",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/or/": {
+  "hash": "94e44561170f44250af5b6e966388fb9dfc1e92743d78c9f72a76af490cc06c4",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/pa/": {
+  "hash": "691435390043fd38e6ad44893beaf0809fcad47b598ab7cdd5db7a89b581164d",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ri/": {
+  "hash": "c08886e05bcffcdc3c5e574d66afc000572755b8b14fa2bd34e38ee91c1266c1",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/sc/": {
+  "hash": "084f64ab0344cbe17305c89a9f3fec1b6d9f74244422f9b0b14c77e1bf86333f",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/sd/": {
+  "hash": "c12c314e8643ef301d9d5ff9268c9d307382d3fc68bfc4681dea45b621acd61c",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/tn/": {
+  "hash": "436c51abe2ebb4769ebf8e01255c5f0fb6e4905752ace9784e294e8bbc2e5ea2",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/tx/": {
+  "hash": "ae70814451b46aad563636aaa5b5e03ef77c908a0f842f277f555a0fb05ba6fd",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/ut/": {
+  "hash": "2adb8f8102873e60eb35883574d87069b50a7552e220db77b54567abd902f917",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/va/": {
+  "hash": "2706989184a7212ab101bb5c9b041859c5b47ffd9612a98c9e88c83bdf377d69",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/vt/": {
+  "hash": "d7026dd3c8f3ce3a89f68d1a098a773992401a812197ffc53ae3a54857a8e58b",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/wa/": {
+  "hash": "b15d6a2054367547cb11b1aa8018897ad4852823e2a774ca1c1a2c82a7277b09",
+  "published": "2026-10-08",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/wi/": {
+  "hash": "8a1e825fe8e6cd464d2a7d889d618714471d75f79321cf1cb62280674179b050",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ },
+ "https://www.snowdayforecaster.com/states/wv/": {
+  "hash": "e83eb63dc8210eea96105a146520ef1adfada6602d1c58c67c341a8f355a7dea",
+  "published": "2026-09-29",
+  "modified": "2026-11-06",
+  "hv": 2
+ }
+}

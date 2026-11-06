@@ -14,6 +14,9 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(ROOT, "build-cities"))
 sys.path.insert(0, os.path.join(ROOT, "build-states"))
 import build_cities as bc   # reuse HEAD, STYLE, HEADER, FOOTER, ORG, EXTRA_CSS, jsonld
+import pagedates as pd
+sys.path.insert(0, HERE)
+import holiday_closures as HC
 
 E, SITE = bc.E, bc.SITE
 TODAY = datetime.date.today()
@@ -183,10 +186,87 @@ def closed_table(h):
 def fmt(d):
     return d.strftime("%A, %B ") + str(d.day) + d.strftime(", %Y")
 
+# ---------------------------------------------------------------- counted closures
+STATE_NAMES = None
+def state_name(code):
+    global STATE_NAMES
+    if STATE_NAMES is None:
+        from states_data import STATES
+        STATE_NAMES = {k: v["name"] for k, v in STATES.items()}
+        STATE_NAMES["DC"] = "District of Columbia"
+    return STATE_NAMES.get(code, code)
+
+NORTHEAST = {"CT", "MA", "ME", "NH", "NJ", "NY", "PA", "RI", "VT"}
+MIDWEST = {"IA", "IL", "IN", "KS", "MI", "MN", "MO", "ND", "NE", "OH", "SD", "WI"}
+
+def counts(slug):
+    """Counted closures from holiday_closures.py for a page, or None if the page has no data."""
+    if slug not in HC.FIELD:
+        return None
+    col, day = HC.FIELD[slug]
+    rows = [r for r in HC.ROWS if r[col] is not None]
+    c = dict(closed=[r for r in rows if r[col] == "closed"], remote=[r for r in rows if r[col] == "remote"],
+             open=[r for r in rows if r[col] == "open"])
+    ne = [r for r in rows if r[0] in NORTHEAST]
+    mw = [r for r in rows if r[0] in MIDWEST]
+    return dict(col=col, day=D.fromisoformat(day), rows=rows, n=len(rows), **c,
+                ne_closed=sum(r[col] == "closed" for r in ne), ne_n=len(ne),
+                mw_closed=sum(r[col] == "closed" for r in mw), mw_n=len(mw))
+
+def pct(a, b):
+    return f"{round(100 * a / b)}%"
+
+def counted_answer(h, k):
+    nm = h.get("short") or h["name"]
+    d = fmt(k["day"])
+    if h["slug"] == "veterans-day":
+        return (f"{len(k['closed'])} of the {k['n']} school districts we checked ({pct(len(k['closed']), k['n'])}) have no school "
+                f"on Veterans Day, {d}; {len(k['open'])} hold classes as normal. Closing is the rule in the Northeast "
+                f"({k['ne_closed']} of {k['ne_n']} districts there close) and the exception in the Midwest "
+                f"({k['mw_closed']} of {k['mw_n']}).")
+    no_inperson = len(k["closed"]) + len(k["remote"])
+    return (f"{len(k['closed'])} of the {k['n']} school districts we checked ({pct(len(k['closed']), k['n'])}) had no school on "
+            f"Election Day, {d}, and {len(k['remote'])} more switched to remote learning, so {no_inperson} of {k['n']} had no "
+            f"in-person classes; {len(k['open'])} were open as normal.")
+
+def counted_section(h, k):
+    nm = h.get("short") or h["name"]
+    col = k["col"]
+    label = {"closed": "No school", "remote": "Remote learning day", "open": "School open"}
+    rows = "".join(
+        f'<tr><td>{E(state_name(r[0]))}</td><td>{E(r[1])}</td><td>{label[r[col]]}</td>'
+        f'<td><a href="{E(r[5])}" rel="nofollow">calendar</a></td></tr>'
+        for r in sorted(k["rows"], key=lambda r: state_name(r[0])))
+    by_status = (f'<ul><li><b>No school:</b> {len(k["closed"])} districts</li>'
+                 + (f'<li><b>Remote learning day:</b> {len(k["remote"])}</li>' if k["remote"] else "")
+                 + f'<li><b>School open:</b> {len(k["open"])}</li></ul>')
+    return (f'<h2 id="count">Which districts {"closed" if k["day"] < TODAY else "close"} on {E(nm)} {k["day"].year}?</h2>'
+            f'<p>We read the {HC.SCHOOL_YEAR} calendar of the largest school district in each state we cover — '
+            f'{k["n"]} districts — for {fmt(k["day"])}.</p>{by_status}'
+            f'<div class="tw"><table><thead><tr><th>State</th><th>District</th><th>{k["day"].strftime("%b")} {k["day"].day}</th><th>Source</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table></div>'
+            f'<p class="note">Source: each district\'s published {HC.SCHOOL_YEAR} student calendar, read on '
+            f'{fmt(D.fromisoformat(HC.RETRIEVED))} (via agendahero.com, which republishes district calendars as dated events). '
+            '"No school" includes holidays, teacher workdays and professional-development days with no students. '
+            '"School open" means the calendar lists no closure that day. Calendars can change after publication — '
+            'a snow make-up day can turn a holiday back into a school day — so confirm with your district. '
+            'Not counted: Vermont (calendar not found)'
+            + (' and Election Day in Portland, Maine (not confirmed)' if h["slug"] == "election-day" else "") + '.</p>')
+
+def zip_module(h):
+    nm = h.get("short") or h["name"].split(" / ")[0]
+    return ('<section class="answer" aria-labelledby="zip-h"><h2 id="zip-h" style="margin-top:0">Check your own district</h2>'
+            f'<p>A holiday is set by the calendar; a snow day is set by the forecast. Enter your ZIP for the chance your '
+            f'district closes for weather on the next school days around {E(nm)}.</p>'
+            '<form class="zipcta" action="/" method="get"><label for="zipcta" style="position:absolute;left:-9999px">ZIP code</label>'
+            '<input id="zipcta" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="Your ZIP code" required>'
+            '<button type="submit">Check my ZIP</button></form></section>')
+
 # ---------------------------------------------------------------- one page
 def build_page(h):
     dates = next_dates(h)
     nd, nnote = dates[0]
+    k = counts(h["slug"])
     url = f"{SITE}/is-there-school-on/{h['slug']}/"
     short = h.get("short") or h["name"].split(" / ")[0]
     title = f"Is There School on {short} {nd.year}? Closings Explained"
@@ -195,6 +275,19 @@ def build_page(h):
     desc = (f"{short} {nd.year} is {fmt(nd)}. Whether schools close, how districts decide, and where to check "
             f"your district's calendar.")[:158]
     h1 = f"Is there school on {short}?"
+    answer = h["answer"]
+    if k and h["slug"] == "veterans-day" and k["day"] == nd:
+        title = f"Is There School on {short} {nd.year}? {len(k['closed'])} of {k['n']} Districts Close"
+        h1 = f"Is there school on {short} {nd.year}?"
+        desc = (f"{len(k['closed'])} of {k['n']} large school districts close on {short}, {fmt(nd)}. "
+                "District-by-district table from each 2026-27 calendar, plus how to check yours.")[:158]
+        answer = counted_answer(h, k) + " " + h["answer"]
+    elif k and h["slug"] == "election-day":
+        title = f"Are Schools Closed on Election Day? {k['day'].year} District Count"
+        h1 = f"Are schools closed on Election Day?"
+        desc = (f"{len(k['closed'])} of {k['n']} large districts had no school on Election Day {k['day'].year}; "
+                f"{len(k['remote'])} went remote. District table, plus the next date: {fmt(nd)}.")[:158]
+        answer = counted_answer(h, k) + " " + h["answer"]
     lede = f"{short} {nd.year} falls on {fmt(nd)}{' (' + nnote + ')' if nnote else ''}. Here is whether schools close, and why it differs between districts."
 
     rows = "".join(f"<tr><td>{d.year}</td><td>{fmt(d)}{' (' + n + ')' if n else ''}</td></tr>" for d, n in dates)
@@ -203,12 +296,14 @@ def build_page(h):
               "<b>not a federal holiday</b>, so federal offices, post offices and banks are open as normal")
 
     body = (
-        f'<div class="answer" id="answer"><p><b>Short answer:</b> {E(h["answer"])}</p></div>'
+        f'<div class="answer" id="answer"><p><b>Short answer:</b> {E(answer)}</p></div>'
         '<dl class="kv">'
         f'<dt>Next date</dt><dd>{fmt(nd)}</dd>'
         f'<dt>Rule</dt><dd>{E(h["rule_text"])}</dd>'
         f'<dt>Federal holiday</dt><dd>{"Yes" if h["federal"] else "No"}</dd>'
         '</dl>'
+        + (counted_section(h, k) if k else "") +
+        zip_module(h) +
         f'<h2 id="dates">When is {E(short)}?</h2>'
         f'<p>{E(short)} is {E(h["rule_text"])}. The next three dates:</p>'
         f'<div class="tw"><table><thead><tr><th>Year</th><th>Date</th></tr></thead><tbody>{rows}</tbody></table></div>'
@@ -232,7 +327,7 @@ def build_page(h):
     )
 
     faqs = [
-        (f"Is there school on {short} {nd.year}?", h["answer"]),
+        ((f"Was there school on {short} {k['day'].year}?" if k and k["day"] < nd else f"Is there school on {short} {nd.year}?"), answer),
         (f"What date is {short} {nd.year}?", f"{short} {nd.year} is {fmt(nd)}{' (' + nnote + ')' if nnote else ''}. It falls on {h['rule_text']}."),
         (f"Is {short} a federal holiday?", ("Yes. It is one of the eleven federal holidays, so federal offices and post "
                                             "offices are closed. Schools follow their own district calendar.") if h["federal"]
@@ -253,8 +348,8 @@ def build_page(h):
                '<li><a href="/states/">Snow days by state</a></li><li><a href="/cities/">Snow days by city</a></li></ul></nav>')
 
     page_ld = {"@context": "https://schema.org", "@type": "WebPage", "@id": url + "#page", "url": url, "name": title,
-               "description": desc, "inLanguage": "en-US", "dateModified": TODAY.isoformat(),
-               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE},
+               "description": desc, "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
+               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}, "author": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}, "publisher": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE},
                "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["#answer", "h1"]}}
     crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
@@ -275,11 +370,21 @@ def build_page(h):
             f'<h1>{E(h1)}</h1><p class="lede">{E(lede)}</p>'
             f'{body}{faq_html}{nav}{related}</main>\n{bc.FOOTER}\n</body>\n</html>\n')
     out = os.path.join(ROOT, "is-there-school-on", h["slug"], "index.html")
-    os.makedirs(os.path.dirname(out), exist_ok=True)
-    open(out, "w", encoding="utf-8").write(page)
+    pd.write_page(out, url, page)
     return dict(slug=h["slug"], name=short, url=url, next=nd.isoformat(), federal=h["federal"], kw=h["kw"])
 
 # ---------------------------------------------------------------- hub
+def hub_counts():
+    out = []
+    v, e = counts("veterans-day"), counts("election-day")
+    if v and v["day"] >= TODAY:
+        out.append(f'<a href="/is-there-school-on/veterans-day/">Veterans Day {v["day"].year}</a>: {len(v["closed"])} of the '
+                   f'{v["n"]} large districts we checked close on {fmt(v["day"])}.')
+    if e:
+        out.append(f'<a href="/is-there-school-on/election-day/">Election Day {e["day"].year}</a>: {len(e["closed"])} of {e["n"]} '
+                   f'had no school and {len(e["remote"])} went remote.')
+    return ("<p>" + " ".join(out) + "</p>") if out else ""
+
 def build_hub(summary):
     url = f"{SITE}/is-there-school-on/"
     title = "Is There School Today? US School Holidays Calendar"
@@ -292,14 +397,14 @@ def build_hub(summary):
     body = ('<div class="answer" id="answer"><p>Whether there is school on a holiday is set by each school district, not '
             'by federal law. Thanksgiving, Memorial Day and Labor Day are closed almost everywhere; Veterans Day, '
             'Columbus Day, Good Friday and Election Day vary widely between districts. The pages below give the next '
-            'date for each holiday and how districts usually treat it.</p></div>'
+            'date for each holiday and how districts usually treat it.</p>' + hub_counts() + '</div>'
             f'<h2 id="upcoming">Upcoming school holidays</h2><div class="cards">{cards}</div>'
             '<h2 id="snow">Holidays and snow days</h2><p>Winter holidays — Martin Luther King Jr. Day and Presidents\' Day '
             'especially — are the ones most often reclaimed as snow make-up days after a heavy winter. For the chance '
             'of a weather closure tomorrow, use the <a href="/">snow day calculator</a>.</p>')
     page_ld = {"@context": "https://schema.org", "@type": "CollectionPage", "@id": url + "#page", "url": url,
-               "name": title, "description": desc, "inLanguage": "en-US", "dateModified": TODAY.isoformat(),
-               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}}
+               "name": title, "description": desc, "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
+               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}, "author": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}, "publisher": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}}
     list_ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "US school holidays",
                "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": x["name"], "url": x["url"]}
                                    for i, x in enumerate(summary)]}
@@ -310,17 +415,16 @@ def build_hub(summary):
             '<p class="lede">The next date for every major school holiday, and whether districts usually close.</p>'
             f'{body}</main>\n{bc.FOOTER}\n</body>\n</html>\n')
     out = os.path.join(ROOT, "is-there-school-on", "index.html")
-    os.makedirs(os.path.dirname(out), exist_ok=True)
-    open(out, "w", encoding="utf-8").write(page)
+    pd.write_page(out, url, page)
 
 # ---------------------------------------------------------------- sitemap + llms
 def update_sitemap(summary):
     p = os.path.join(ROOT, "sitemap.xml")
     s = open(p, encoding="utf-8").read()
     s = re.sub(r"<url><loc>https://www\.snowdayforecaster\.com/is-there-school-on/[a-z-]*/?</loc>.*?</url>\s*", "", s, flags=re.S)
-    t = TODAY.isoformat()
-    extra = f'<url><loc>{SITE}/is-there-school-on/</loc><lastmod>{t}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>\n'
-    extra += "".join(f'<url><loc>{x["url"]}</loc><lastmod>{t}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n' for x in summary)
+    hub = SITE + '/is-there-school-on/'
+    extra = f'<url><loc>{hub}</loc><lastmod>{pd.lastmod(hub)}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>\n'
+    extra += "".join(f'<url><loc>{x["url"]}</loc><lastmod>{pd.lastmod(x["url"])}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n' for x in summary)
     open(p, "w", encoding="utf-8").write(s.replace("</urlset>", extra + "</urlset>"))
 
 def update_llms(summary):
@@ -338,6 +442,7 @@ def main():
     build_hub(summary)
     update_sitemap(summary)
     update_llms(summary)
+    pd.save()
     print(f"built {len(summary)} holiday pages + hub, sitemap, llms.txt")
 
 if __name__ == "__main__":

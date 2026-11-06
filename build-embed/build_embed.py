@@ -8,7 +8,9 @@ widget behaves exactly like the site's live board.
 
 Run from repo root:  python3 build-embed/build_embed.py
 """
-import os, re, json, html, datetime
+import os, re, sys, json, html, datetime
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "build-cities"))
+import pagedates as pd
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://www.snowdayforecaster.com"
 TODAY = datetime.date.today().isoformat()
@@ -169,8 +171,8 @@ def build_info():
     script_snippet = ('<div class="sdf-widget"></div>\n'
                       '<script src="https://www.snowdayforecaster.com/embed.js" async></script>')
     page_ld = {"@context": "https://schema.org", "@type": "WebPage", "@id": url + "#page", "url": url, "name": title,
-               "description": desc, "inLanguage": "en-US", "dateModified": TODAY,
-               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}}
+               "description": desc, "inLanguage": "en-US", "datePublished": pd.PUB, "dateModified": pd.MOD,
+               "isPartOf": {"@type": "WebSite", "name": "Snow Day Forecaster", "url": SITE}, "author": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}, "publisher": {"@type": "Organization", "name": "Snow Day Forecaster", "url": SITE}}
     crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
         {"@type": "ListItem", "position": 2, "name": "Add the widget", "item": url}]}
@@ -212,9 +214,10 @@ def build_info():
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc)}">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <link rel="canonical" href="{url}">
 <meta name="theme-color" content="#1d5bb8">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Snow Day Forecaster">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Snow Day Forecaster">
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}">
 <meta property="og:url" content="{url}"><meta property="og:image" content="{SITE}/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -230,17 +233,16 @@ def build_info():
 </body>
 </html>
 """
-    os.makedirs(os.path.join(ROOT, "add-widget"), exist_ok=True)
-    open(os.path.join(ROOT, "add-widget", "index.html"), "w", encoding="utf-8").write(page)
+    pd.write_page(os.path.join(ROOT, "add-widget", "index.html"), url, page)
 
 def update_sitemap():
     p = os.path.join(ROOT, "sitemap.xml")
     s = open(p, encoding="utf-8").read()
     s = re.sub(r"<url><loc>https://www\.snowdayforecaster\.com/add-widget/</loc>.*?</url>\s*", "", s, flags=re.S)
-    entry = f'<url><loc>{SITE}/add-widget/</loc><lastmod>{TODAY}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n'
+    entry = f'<url><loc>{SITE}/add-widget/</loc><lastmod>{pd.lastmod(SITE + '/add-widget/')}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n'
     s = s.replace("</urlset>", entry + "</urlset>")
     open(p, "w", encoding="utf-8").write(s)
 
 if __name__ == "__main__":
-    build_embed(); build_loader(); build_info(); update_sitemap()
+    build_embed(); build_loader(); build_info(); update_sitemap(); pd.save()
     print("built /embed/, /embed.js, /add-widget/, sitemap entry")
